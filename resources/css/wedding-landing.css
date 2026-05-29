@@ -1,0 +1,1199 @@
+/* ============================================
+   LANDING PAGE - WEDDING INVITATION CSS
+   ============================================ */
+
+:root {
+    --primary-color: #f0f4f8;
+    --accent-color: #e0eaf5;
+    --text-dark: #1a3a52;
+    --text-light: #5a7a8a;
+    --blue-main: #2c5aa0;
+    --blue-dark: #1e3f5a;
+    --blue-light: #e8f0fa;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   LANDING PAGE CONTAINER
+   ============================================ */
+
+.landing-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* ============================================
+   BACKGROUND STYLING
+   ============================================ */
+
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(2px);
+    transform: scale(1.1);
+}
+
+.gradient-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: none;
+    z-index: 2;
+}
+
+/* ============================================
+   CONTENT STYLING
+   ============================================ */
+
+.landing-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+/* Decorative Top Section */
+.decorative-top {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.decorative-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    flex-shrink: 0;
+}
+
+.decorative-text {
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+    color: #7a7a7a;
+    font-weight: 500;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+/* Names Container */
+.names-container {
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    animation: zoomIn 1s ease-out 0.3s forwards;
+}
+
+.bride-groom-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.groom-name,
+.bride-name {
+    font-family: "Great Vibes", serif;
+    font-size: clamp(3rem, 10vw, 6.5rem);
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.names-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin: 1rem 0;
+}
+
+.separator-text {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    font-weight: 1000;
+}
+
+/* Wedding Details */
+.wedding-details {
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+}
+
+.wedding-date {
+    font-size: 1.3rem;
+    color: #3d3d3d;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.wedding-location {
+    font-size: 1.1rem;
+    color: #999999;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   CTA BUTTON STYLING
+   ============================================ */
+
+.cta-button-container {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    animation: fadeInUp 1s ease-out 0.9s forwards;
+}
+
+.cta-button {
+    position: relative;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    border: 2px solid var(--gold);
+    background: linear-gradient(
+        135deg,
+        rgba(212, 175, 55, 0.15) 0%,
+        rgba(232, 212, 201, 0.25) 100%
+    );
+    color: #3d3d3d;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: fit-content;
+}
+
+.cta-button:hover {
+    opacity: 0.85;
+}
+
+.button-text {
+    position: relative;
+    z-index: 2;
+}
+
+.button-icon {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* ============================================
+   WELCOME PAGE - NEW CONCEPT
+   ============================================ */
+
+.welcome-header {
+    position: absolute;
+    top: 3rem;
+    left: 4rem;
+    transform: none;
+    text-align: left;
+    z-index: 101;
+}
+
+.welcome-subtitle {
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    color: #7a7a7a;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 400;
+}
+
+.couple-names {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin: 0.5rem 0 0 0;
+    letter-spacing: 1px;
+}
+
+/* Monogram Circle - Central Element */
+.monogram-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 101;
+}
+
+.monogram-circle {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(44, 90, 160, 0.2) 100%
+    );
+    backdrop-filter: blur(10px);
+    z-index: 101;
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.2),
+        0 8px 15px rgba(44, 90, 160, 0.3),
+        inset 0 1px 0px rgba(255, 255, 255, 0.8),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+    mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50,90 C20,70 5,55 5,40 C5,25 15,15 25,15 C35,15 45,25 50,35 C55,25 65,15 75,15 C85,15 95,25 95,40 C95,55 80,70 50,90 Z" fill="black"/></svg>');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    clip-path: none;
+}
+
+.monogram-circle::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+.monogram-circle::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50,90 C20,70 5,55 5,40 C5,25 15,15 25,15 C35,15 45,25 50,35 C55,25 65,15 75,15 C85,15 95,25 95,40 C95,55 80,70 50,90 Z" fill="none" stroke="%232c5aa0" stroke-width="4" stroke-linejoin="round"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+}
+
+.monogram-circle:hover {
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.25),
+        0 12px 20px rgba(44, 90, 160, 0.4),
+        inset 0 1px 0px rgba(255, 255, 255, 0.9),
+        inset 0 -2px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px) scale(1.08);
+}
+
+.monogram-circle:active {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.2),
+        0 5px 10px rgba(44, 90, 160, 0.3),
+        inset 0 1px 0px rgba(255, 255, 255, 0.7),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-header.opening {
+    animation: slideOutLeft 1s ease-in-out forwards;
+}
+
+.welcome-footer.opening {
+    animation: slideOutRight 1s ease-in-out forwards;
+}
+
+@keyframes slideOutLeft {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+}
+
+@keyframes slideOutRight {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+}
+
+.monogram-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.monogram-text {
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    color: var(--white);
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.3),
+        0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Welcome Footer */
+.welcome-footer {
+    position: absolute;
+    bottom: 4rem;
+    right: 4rem;
+    left: auto;
+    transform: none;
+    text-align: right;
+    z-index: 101;
+}
+
+.invitation-intro {
+    font-size: 1.8rem;
+    color: var(--white);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0 0 1.5rem 0;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    text-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.3);
+    max-width: 140px;
+    line-height: 1.2;
+}
+
+.welcome-footer .wedding-date {
+    font-size: 2.2rem;
+    color: var(--white);
+    margin: 0.5rem 0;
+    font-weight: 700;
+    font-family: "Playfair Display", serif;
+    text-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.3;
+}
+
+.invitation-greeting {
+    font-size: 1.2rem;
+    color: var(--white);
+    margin: 1.2rem 0 0 0;
+    letter-spacing: 0.8px;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    text-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.6;
+}
+
+.invitation-text {
+    font-size: 0.9rem;
+    color: #7a7a7a;
+    letter-spacing: 1px;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+}
+
+/* Circle Opening Animation */
+@keyframes circleOpen {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   PHOTO DOORS STYLING
+   ============================================ */
+
+.photo-door {
+    position: fixed;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transform-origin: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.1),
+        0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.photo-left {
+    left: 0;
+    transform: translateX(0);
+}
+
+.photo-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+/* Photo opening animation - slide out */
+.photo-door.opening-left {
+    animation: slideOutLeft 1s ease-in-out forwards;
+}
+
+.photo-door.opening-right {
+    animation: slideOutRight 1s ease-in-out forwards;
+}
+
+@keyframes slideOutLeft {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideOutRight {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   PHOTO DOORS STYLING
+   ============================================ */
+
+.photo-door {
+    position: fixed;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transform-origin: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.1),
+        0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.photo-left {
+    left: 0;
+    transform: translateX(0);
+}
+
+.photo-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+/* Subtle center dividing line */
+.landing-page::after {
+    content: "";
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1px;
+    height: 30vh;
+    background-color: rgba(0, 0, 0, 0.08);
+    z-index: 101;
+    pointer-events: none;
+}
+
+/* Photo opening animation - slide out */
+.photo-door.opening-left {
+    animation: slideOutLeft 1s ease-in-out forwards;
+}
+
+.photo-door.opening-right {
+    animation: slideOutRight 1s ease-in-out forwards;
+}
+
+.paper-content {
+    text-align: center;
+    padding: 2rem;
+}
+
+.paper-text {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ============================================
+   DECORATIVE BOTTOM SECTION
+   ============================================ */
+
+.decorative-bottom {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeInUp 1s ease-out 1.2s forwards;
+}
+
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.scroll-text {
+    font-size: 0.95rem;
+    color: #999999;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.scroll-animation {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+.scroll-animation span {
+    width: 2px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 2px;
+    animation: scrollBounce 1.2s ease-in-out infinite;
+}
+
+.scroll-animation span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.scroll-animation span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes scrollBounce {
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateY(-8px);
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   MUSIC CONTROL FLOATING BUTTON
+   ============================================ */
+
+.music-control-floating {
+    position: fixed;
+    bottom: 3rem;
+    right: 5.5rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: fadeInUp 1s ease-out 1.5s forwards;
+}
+
+.music-indicator {
+    display: none;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        rgba(212, 175, 55, 0.4) 0%,
+        rgba(232, 212, 201, 0.3) 100%
+    );
+    border: 2px solid var(--gold);
+    color: var(--text-dark);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15),
+        0 4px 10px rgba(212, 175, 55, 0.2),
+        inset 0 1px 0px rgba(255, 255, 255, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+.music-btn:hover {
+    transform: translateY(-3px) scale(1.12);
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.2),
+        0 6px 15px rgba(212, 175, 55, 0.3),
+        inset 0 1px 0px rgba(255, 255, 255, 0.7);
+}
+
+.music-btn:active {
+    transform: translateY(-1px) scale(1.08);
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.15),
+        0 3px 8px rgba(212, 175, 55, 0.2),
+        inset 0 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+.music-btn.playing {
+    background: linear-gradient(
+        135deg,
+        rgba(212, 175, 55, 0.6) 0%,
+        rgba(232, 212, 201, 0.5) 100%
+    );
+    color: var(--gold);
+    box-shadow:
+        0 8px 25px rgba(212, 175, 55, 0.3),
+        0 4px 12px rgba(212, 175, 55, 0.25),
+        inset 0 1px 0px rgba(255, 255, 255, 0.7);
+}
+
+.music-indicator {
+    position: relative;
+    width: 15px;
+    height: 15px;
+}
+
+.pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0;
+    animation: none;
+}
+
+.pulse.active {
+    animation: pulse-animation 1.5s ease-out infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Welcome Page Responsive */
+@media (max-width: 768px) {
+    .welcome-header {
+        top: 2rem;
+        left: 2rem;
+    }
+
+    .couple-names {
+        font-size: 1.5rem;
+    }
+
+    .monogram-circle {
+        width: 200px;
+        height: 200px;
+        border-width: 2px;
+        z-index: 101;
+        position: relative;
+    }
+
+    .monogram-text {
+        font-size: 2.2rem;
+    }
+
+    .welcome-footer {
+        bottom: 2.5rem;
+        right: 2rem;
+        left: auto;
+        text-align: right;
+    }
+
+    .invitation-intro {
+        font-size: 1.4rem;
+    }
+
+    .welcome-footer .wedding-date {
+        font-size: 1.8rem;
+    }
+
+    .invitation-greeting {
+        font-size: 1rem;
+    }
+
+    .photo-door {
+        width: 50vw;
+        height: 100vh;
+    }
+
+    .photo-left {
+        left: 0;
+        right: auto;
+        border-right: 2px solid var(--blue-main);
+        display: flex;
+    }
+
+    .photo-right {
+        right: 0;
+        left: auto;
+        border-left: 2px solid var(--blue-main);
+        display: flex;
+    }
+
+    .paper-text {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-header {
+        top: 1.5rem;
+        left: 1.5rem;
+    }
+
+    .welcome-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .couple-names {
+        font-size: 1.2rem;
+    }
+
+    .monogram-circle {
+        width: 160px;
+        height: 160px;
+        border-width: 2px;
+        z-index: 101;
+        position: relative;
+    }
+
+    .monogram-text {
+        font-size: 1.8rem;
+    }
+
+    .welcome-footer {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        left: auto;
+        text-align: right;
+    }
+
+    .invitation-intro {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        max-width: 110px;
+    }
+
+    .welcome-footer .wedding-date {
+        font-size: 1.5rem;
+    }
+
+    .invitation-greeting {
+        font-size: 0.9rem;
+    }
+
+    .invitation-text {
+        font-size: 0.75rem;
+    }
+
+    .welcome-footer .wedding-date {
+        font-size: 0.9rem;
+    }
+
+    .music-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    .music-control-floating {
+        bottom: 2rem;
+        right: 3rem;
+    }
+
+    .photo-door {
+        width: 50vw;
+        height: 100vh;
+    }
+
+    .photo-left {
+        left: 0;
+        right: auto;
+        border-right: 2px solid var(--blue-main);
+        display: flex;
+    }
+
+    .photo-right {
+        right: 0;
+        left: auto;
+        border-left: 2px solid var(--blue-main);
+        display: flex;
+    }
+
+    .paper-text {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
+
+/* Old responsive styles for backward compatibility */
+@media (max-width: 768px) {
+    .landing-content {
+        padding: 1.5rem;
+    }
+
+    .decorative-top {
+        margin-bottom: 1.2rem;
+        gap: 1rem;
+    }
+
+    .decorative-line {
+        width: 40px;
+    }
+
+    .decorative-text {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+
+    .names-container {
+        margin-bottom: 0.8rem;
+        margin-top: 0.3rem;
+    }
+
+    .groom-name,
+    .bride-name {
+        font-size: clamp(2.3rem, 7vw, 4rem);
+    }
+
+    .separator-text {
+        font-size: 2rem;
+    }
+
+    .names-separator {
+        width: 50px;
+        height: 50px;
+        margin: 0.6rem 0;
+    }
+
+    .wedding-date {
+        font-size: 1.15rem;
+    }
+
+    .wedding-location {
+        font-size: 1rem;
+    }
+
+    .wedding-details {
+        margin-bottom: 1rem;
+        margin-top: 0.3rem;
+    }
+
+    .cta-button-container {
+        margin-bottom: 0.8rem;
+        margin-top: 0.8rem;
+    }
+
+    .cta-button {
+        padding: 1rem 2rem;
+        font-size: 0.9rem;
+        gap: 0.5rem;
+        min-width: auto;
+    }
+
+    .button-text {
+        font-size: 0.9rem;
+    }
+
+    .button-icon {
+        font-size: 1rem;
+    }
+
+    .music-control-floating {
+        bottom: 2.5rem;
+        right: 2.5rem;
+    }
+
+    .decorative-bottom {
+        bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-content {
+        padding: 1.5rem;
+        justify-content: center;
+    }
+
+    .decorative-top {
+        margin-bottom: 0.8rem;
+        gap: 1.2rem;
+    }
+
+    .decorative-text {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+
+    .decorative-line {
+        width: 35px;
+    }
+
+    .names-container {
+        margin-bottom: 0.8rem;
+        margin-top: 0.3rem;
+    }
+
+    .groom-name,
+    .bride-name {
+        font-size: clamp(2.2rem, 6vw, 3.8rem);
+        letter-spacing: 1px;
+    }
+
+    .separator-text {
+        font-size: 1.8rem;
+    }
+
+    .names-separator {
+        width: 45px;
+        height: 45px;
+        margin: 0.5rem 0;
+    }
+
+    .wedding-date {
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .wedding-location {
+        font-size: 0.95rem;
+    }
+
+    .wedding-details {
+        margin-bottom: 1rem;
+        margin-top: 0.3rem;
+    }
+
+    .cta-button-container {
+        margin-bottom: 0.8rem;
+        margin-top: 0.8rem;
+    }
+
+    .cta-button {
+        padding: 0.9rem 1.8rem;
+        font-size: 0.9rem;
+        min-width: auto;
+        gap: 0.5rem;
+    }
+
+    .button-text {
+        font-size: 0.85rem;
+    }
+
+    .button-icon {
+        font-size: 0.95rem;
+    }
+
+    .music-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    .music-control-floating {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .music-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 1.5rem;
+    }
+
+    .scroll-text {
+        font-size: 0.7rem;
+    }
+
+    .decorative-bottom {
+        bottom: 1rem;
+    }
+}
+
+/* ============================================
+   GLASSMORPHISM EFFECT
+   ============================================ */
+
+.glass-effect {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 100%
+    );
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   AOS ANIMATION ADJUSTMENTS
+   ============================================ */
+
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
