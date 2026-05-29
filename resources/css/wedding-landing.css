@@ -492,6 +492,7 @@ body {
     box-shadow:
         inset 0 0 30px rgba(0, 0, 0, 0.1),
         0 10px 40px rgba(0, 0, 0, 0.15);
+    filter: blur(2px);
 }
 
 .photo-left {
@@ -555,6 +556,7 @@ body {
     box-shadow:
         inset 0 0 30px rgba(0, 0, 0, 0.1),
         0 10px 40px rgba(0, 0, 0, 0.15);
+    filter: blur(2px);
 }
 
 .photo-left {
