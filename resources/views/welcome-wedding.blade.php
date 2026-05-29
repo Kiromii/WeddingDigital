@@ -9,16 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
-<body class="bg-stone-50">
+<body>
     <!-- Landing / Cover Page -->
     <div id="landingPage" class="landing-page">
-        <!-- Background dengan gradient overlay -->
-        <div class="background-container">
-            <div class="background-image" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop');">
-            </div>
-            <div class="gradient-overlay"></div>
-        </div>
-
         <!-- Content -->
         <div class="landing-content">
             <!-- Central Monogram Circle -->
