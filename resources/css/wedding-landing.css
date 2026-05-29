@@ -1,6 +1,4 @@
-/* ============================================
-   LANDING PAGE - WEDDING INVITATION CSS
-   ============================================ */
+/* landingpage wedding */
 
 :root {
     --primary-color: #f0f4f8;
@@ -28,10 +26,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ============================================
-   LANDING PAGE CONTAINER
-   ============================================ */
-
 .landing-page {
     position: relative;
     width: 100%;
@@ -42,9 +36,7 @@ body {
     overflow: hidden;
 }
 
-/* ============================================
-   BACKGROUND STYLING
-   ============================================ */
+/* backgorund */
 
 .background-container {
     position: absolute;
@@ -74,10 +66,6 @@ body {
     backdrop-filter: none;
     z-index: 2;
 }
-
-/* ============================================
-   CONTENT STYLING
-   ============================================ */
 
 .landing-content {
     position: relative;
@@ -180,10 +168,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* ============================================
-   CTA BUTTON STYLING
-   ============================================ */
-
 .cta-button-container {
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -236,9 +220,7 @@ body {
     font-size: 1.2rem;
 }
 
-/* ============================================
-   WELCOME PAGE - NEW CONCEPT
-   ============================================ */
+/* welkam page */
 
 .welcome-header {
     position: absolute;
@@ -472,10 +454,6 @@ body {
     }
 }
 
-/* ============================================
-   PHOTO DOORS STYLING
-   ============================================ */
-
 .photo-door {
     position: fixed;
     top: 0;
@@ -536,9 +514,7 @@ body {
     }
 }
 
-/* ============================================
-   PHOTO DOORS STYLING
-   ============================================ */
+/* Photo animasi */
 
 .photo-door {
     position: fixed;
@@ -606,10 +582,6 @@ body {
     line-height: 1.4;
 }
 
-/* ============================================
-   DECORATIVE BOTTOM SECTION
-   ============================================ */
-
 .decorative-bottom {
     position: absolute;
     bottom: 2rem;
@@ -667,9 +639,7 @@ body {
     }
 }
 
-/* ============================================
-   MUSIC CONTROL FLOATING BUTTON
-   ============================================ */
+/* Music Seting */
 
 .music-control-floating {
     position: fixed;
@@ -773,9 +743,7 @@ body {
     }
 }
 
-/* ============================================
-   ANIMATIONS
-   ============================================ */
+/* Animasi */
 
 @keyframes fadeInUp {
     from {
@@ -827,11 +795,8 @@ body {
     animation: fadeInUp 0.8s ease-out;
 }
 
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
-
-/* Welcome Page Responsive */
+/* Responsif */
+/* Welcome page responsif */
 @media (max-width: 768px) {
     .welcome-header {
         top: 2rem;
@@ -988,7 +953,6 @@ body {
     }
 }
 
-/* Old responsive styles for backward compatibility */
 @media (max-width: 768px) {
     .landing-content {
         padding: 1.5rem;
@@ -1172,9 +1136,7 @@ body {
     }
 }
 
-/* ============================================
-   GLASSMORPHISM EFFECT
-   ============================================ */
+/* Effect Glassmorphism */
 
 .glass-effect {
     background: linear-gradient(
