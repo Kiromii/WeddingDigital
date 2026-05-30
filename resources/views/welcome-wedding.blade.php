@@ -13,7 +13,7 @@
     <!-- Landing / Cover Page -->
     <div id="landingPage" class="landing-page">
         <!-- Content -->
-        <div class="landing-content">
+        {{-- <div class="landing-content">
             <!-- Central Monogram Circle -->
             <div class="monogram-container">
                 <div id="monogramCircle" class="monogram-circle">
@@ -21,7 +21,7 @@
                         <span class="monogram-text">B & B</span>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Photo Door - Left -->
             <div class="photo-door photo-left" id="photoLeft" style="background-image: url('{{ asset('images/photo-left.jpg') }}');"></div>
