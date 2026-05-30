@@ -11,3 +11,7 @@ Route::get('/undangan', function () {
     return view('welcome-wedding');
 });
 
+Route::get('/landingpage', function () {
+    return view('landingpage');
+});
+

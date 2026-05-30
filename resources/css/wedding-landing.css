@@ -1161,3 +1161,237 @@ body {
 [data-aos].aos-animate {
     opacity: 1;
 }
+/* Landingpage floral card style */
+.landing-page-floral {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top left, rgba(106, 145, 200, 0.18), transparent 18%),
+        radial-gradient(circle at bottom right, rgba(214, 182, 130, 0.18), transparent 18%),
+        linear-gradient(180deg, #f8f7ef 0%, #efe6d5 52%, #e7dfc6 100%);
+    overflow: hidden;
+}
+
+.landing-page-floral::after {
+    content: "";
+    display: none;
+}
+
+.landing-card {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 440px);
+    padding: 2rem 1.8rem 2.4rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 42px;
+    border: 1px solid rgba(245, 239, 224, 0.9);
+    box-shadow: 0 32px 80px rgba(41, 71, 118, 0.12);
+    backdrop-filter: blur(10px);
+}
+
+.event-type {
+    font-size: 1rem;
+    color: #4c6a8f;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1.4rem;
+}
+
+.photo-frame {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 1.5rem;
+    border-radius: 36px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(226, 235, 244, 0.92));
+    border: 8px solid rgba(255, 255, 255, 0.92);
+    box-shadow: 0 18px 40px rgba(86, 113, 156, 0.14);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.couple-names {
+    font-family: "Great Vibes", serif;
+    font-size: clamp(3rem, 5vw, 4.4rem);
+    color: #1f3a5f;
+    margin: 0;
+    line-height: 1.05;
+    letter-spacing: 1px;
+}
+
+.save-date-btn {
+    margin: 1.6rem auto 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.95rem 2rem;
+    border: none;
+    border-radius: 999px;
+    background: #25508c;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.9px;
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 18px 30px rgba(25, 69, 122, 0.22);
+}
+
+.save-date-btn:hover {
+    transform: translateY(-2px);
+    background: #2d639d;
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.24);
+}
+
+.wedding-date {
+    margin-top: 1.35rem;
+    font-size: 1.05rem;
+    color: #415a77;
+    font-weight: 600;
+}
+
+.decor-floral {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background-image: radial-gradient(circle at 30% 35%, rgba(73, 106, 154, 0.16), transparent 30%),
+        radial-gradient(circle at 60% 30%, rgba(222, 190, 143, 0.18), transparent 26%),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.95), transparent 55%);
+    pointer-events: none;
+    filter: blur(0.4px);
+}
+
+.top-left {
+    top: -40px;
+    left: -40px;
+    transform: rotate(-10deg);
+}
+
+.top-right {
+    top: -40px;
+    right: -40px;
+    transform: rotate(10deg);
+}
+
+.bottom-left {
+    bottom: -40px;
+    left: -40px;
+    transform: rotate(6deg);
+}
+
+.bottom-right {
+    bottom: -40px;
+    right: -40px;
+    transform: rotate(-8deg);
+}
+
+@media (max-width: 768px) {
+    .landing-page-floral {
+        padding: 1.2rem;
+    }
+
+    .landing-card {
+        width: min(100%, 100%);
+        padding: 1.8rem 1.3rem 2rem;
+        border-radius: 32px;
+    }
+
+    .photo-frame {
+        width: 210px;
+        height: 210px;
+        margin-bottom: 1.2rem;
+    }
+
+    .couple-names {
+        font-size: 3rem;
+    }
+
+    .save-date-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .decor-floral {
+        width: 170px;
+        height: 170px;
+    }
+}
+
+.bottom-navbar {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.55rem;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 999px;
+    border: 1px solid rgba(148, 167, 194, 0.35);
+    box-shadow: 0 18px 40px rgba(47, 73, 110, 0.14);
+    backdrop-filter: blur(18px);
+    z-index: 60;
+    max-width: min(100%, 520px);
+}
+
+.navbar-item {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    background: #edf3fb;
+    color: #2c4f78;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navbar-item.active,
+.navbar-item:hover {
+    background: #365f95;
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(42, 74, 122, 0.2);
+    transform: translateY(-1px);
+}
+
+.navbar-item i {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .bottom-navbar {
+        bottom: 12px;
+        gap: 0.5rem;
+        padding: 0.35rem;
+        max-width: min(100%, 420px);
+    }
+
+    .navbar-item {
+        width: 46px;
+        height: 46px;
+    }
+}
