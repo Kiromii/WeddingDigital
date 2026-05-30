@@ -1548,7 +1548,6 @@ body {
     height: 280px;
     border: none;
     display: block;
-}
     color: #4b5f7f;
     font-size: 0.95rem;
     line-height: 1.6;
@@ -2202,7 +2201,6 @@ body {
     gap: 3rem;
     text-align: left;
     padding: 2rem;
-}
 }
 
 .hero-copy {
