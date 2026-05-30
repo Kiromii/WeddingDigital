@@ -20,14 +20,182 @@ function initializeElements() {
     const photoLeft = document.getElementById("photoLeft");
     const photoRight = document.getElementById("photoRight");
 
-    // Safety check
+    let isMusicPlaying = false;
+    let invitationOpened = false;
+
+    // ============================================
+    // MESSAGE FORM HANDLER
+    // ============================================
+    initializeMessageForm();
+
+    // ============================================
+    // TIMELINE SCROLL ANIMATION
+    // ============================================
+    initializeTimeline();
+
+    // ============================================
+    // COUNTDOWN TIMER
+    // ============================================
+    initializeCountdown();
+
+    // Skip remaining initialization if monogramCircle doesn't exist (landing page)
     if (!monogramCircle) {
-        console.warn("Monogram circle element not found");
         return;
     }
 
-    let isMusicPlaying = false;
-    let invitationOpened = false;
+    function initializeMessageForm() {
+        const messageForm = document.getElementById("messageForm");
+        const messagesDisplay = document.getElementById("messagesDisplay");
+
+        if (!messageForm || !messagesDisplay) {
+            console.warn("Message form or display element not found");
+            return;
+        }
+
+        // Load existing messages from localStorage
+        loadMessages();
+
+        // Handle form submission
+        messageForm.addEventListener("submit", handleMessageSubmit);
+
+        function handleMessageSubmit(e) {
+            e.preventDefault();
+
+            const nameInput = document.getElementById("guestName");
+            const messageInput = document.getElementById("guestMessage");
+
+            const name = nameInput.value.trim();
+            const message = messageInput.value.trim();
+
+            if (!name || !message) {
+                alert("Nama dan pesan tidak boleh kosong!");
+                return;
+            }
+
+            // Create message object
+            const messageObj = {
+                id: Date.now(),
+                name: name,
+                message: message,
+                timestamp: new Date(),
+            };
+
+            // Add message to display
+            addMessageToDisplay(messageObj);
+
+            // Save to localStorage
+            saveMessage(messageObj);
+
+            // Clear form
+            nameInput.value = "";
+            messageInput.value = "";
+            nameInput.focus();
+        }
+
+        function addMessageToDisplay(messageObj) {
+            if (messagesDisplay.querySelector(".messages-empty")) {
+                messagesDisplay.innerHTML = "";
+            }
+
+            const messageElement = createMessageElement(messageObj);
+            messagesDisplay.insertBefore(
+                messageElement,
+                messagesDisplay.firstChild,
+            );
+        }
+
+        function createMessageElement(messageObj) {
+            const div = document.createElement("div");
+            div.className = "message-item";
+            div.id = `message-${messageObj.id}`;
+
+            const timestamp =
+                messageObj.timestamp instanceof Date
+                    ? messageObj.timestamp
+                    : new Date(messageObj.timestamp);
+            const timeString = formatTime(timestamp);
+
+            div.innerHTML = `
+                <div class="message-header">
+                    <span class="message-name">${escapeHtml(messageObj.name)}</span>
+                    <span class="message-time">${timeString}</span>
+                </div>
+                <div class="message-content">${escapeHtml(messageObj.message)}</div>
+            `;
+
+            return div;
+        }
+
+        function formatTime(date) {
+            const today = new Date();
+            const messageDate = new Date(date);
+
+            const isToday =
+                messageDate.getDate() === today.getDate() &&
+                messageDate.getMonth() === today.getMonth() &&
+                messageDate.getFullYear() === today.getFullYear();
+
+            const time = messageDate.toLocaleTimeString("id-ID", {
+                hour: "2-digit",
+                minute: "2-digit",
+            });
+
+            if (isToday) {
+                return time;
+            }
+
+            const dateStr = messageDate.toLocaleDateString("id-ID", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+            });
+
+            return `${dateStr} ${time}`;
+        }
+
+        function saveMessage(messageObj) {
+            let messages = JSON.parse(
+                localStorage.getItem("weddingMessages") || "[]",
+            );
+            messages.unshift({
+                ...messageObj,
+                timestamp: messageObj.timestamp.toISOString(),
+            });
+            localStorage.setItem("weddingMessages", JSON.stringify(messages));
+        }
+
+        function loadMessages() {
+            const messages = JSON.parse(
+                localStorage.getItem("weddingMessages") || "[]",
+            );
+
+            if (messages.length === 0) {
+                messagesDisplay.innerHTML =
+                    '<div class="messages-empty">Belum ada pesan. Jadilah yang pertama mengirim ucapan!</div>';
+                return;
+            }
+
+            messagesDisplay.innerHTML = "";
+            messages.forEach((msg) => {
+                const messageObj = {
+                    ...msg,
+                    timestamp: new Date(msg.timestamp),
+                };
+                addMessageToDisplay(messageObj);
+            });
+        }
+
+        function escapeHtml(text) {
+            const map = {
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#039;",
+            };
+            return text.replace(/[&<>"']/g, (m) => map[m]);
+        }
+    }
 
     // ============================================
     // AOS INITIALIZATION
@@ -155,6 +323,100 @@ function initializeElements() {
                 window.location.href = "/landingpage";
             }, 800);
         }
+    }
+
+    // ============================================
+    // TIMELINE SCROLL ANIMATION
+    // ============================================
+    function initializeTimeline() {
+        const timelineContainer = document.querySelector(".timeline-container");
+        const timelineLine = document.getElementById("timelineLine");
+
+        if (!timelineContainer || !timelineLine) {
+            return;
+        }
+
+        function updateTimelineHeight() {
+            const items = document.querySelectorAll(".timeline-item");
+            if (items.length === 0) return;
+
+            const firstItem = items[0];
+            const lastItem = items[items.length - 1];
+
+            const containerTop =
+                timelineContainer.getBoundingClientRect().top + window.scrollY;
+            const windowTop = window.scrollY;
+
+            // Calculate scroll progress
+            const viewportHeight = window.innerHeight;
+            const scrollProgress = Math.max(
+                0,
+                Math.min(
+                    1,
+                    (windowTop + viewportHeight - containerTop) /
+                        (timelineContainer.offsetHeight + viewportHeight),
+                ),
+            );
+
+            // Apply scale transform to timeline line
+            timelineLine.style.scaleY = scrollProgress;
+        }
+
+        // Update on scroll
+        window.addEventListener("scroll", updateTimelineHeight, {
+            passive: true,
+        });
+
+        // Initial call
+        updateTimelineHeight();
+    }
+
+    function initializeCountdown() {
+        // Wedding date: November 22, 2026
+        const weddingDate = new Date(2026, 10, 22, 0, 0, 0).getTime(); // Month is 0-indexed
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeRemaining = weddingDate - now;
+
+            if (timeRemaining <= 0) {
+                // Wedding day has arrived
+                document.getElementById("days").textContent = "0";
+                document.getElementById("hours").textContent = "0";
+                document.getElementById("minutes").textContent = "0";
+                document.getElementById("seconds").textContent = "0";
+                return;
+            }
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+                (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+            );
+            const minutes = Math.floor(
+                (timeRemaining % (1000 * 60 * 60)) / (1000 * 60),
+            );
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = String(days).padStart(
+                2,
+                "0",
+            );
+            document.getElementById("hours").textContent = String(
+                hours,
+            ).padStart(2, "0");
+            document.getElementById("minutes").textContent = String(
+                minutes,
+            ).padStart(2, "0");
+            document.getElementById("seconds").textContent = String(
+                seconds,
+            ).padStart(2, "0");
+        }
+
+        // Update countdown immediately
+        updateCountdown();
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
     }
 
     // ============================================
