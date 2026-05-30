@@ -150,13 +150,10 @@ function initializeElements() {
             landingPage.style.opacity = "0";
             landingPage.style.pointerEvents = "none";
 
-            // Scroll down after transition
+            // Redirect to landing page after transition
             setTimeout(() => {
-                window.scrollBy({
-                    top: window.innerHeight,
-                    behavior: "smooth",
-                });
-            }, 500);
+                window.location.href = "/landingpage";
+            }, 800);
         }
     }
 

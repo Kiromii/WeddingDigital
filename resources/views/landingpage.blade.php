@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan - Dimas & Risma</title>
+    <title>Undangan Pernikahan - Riko & Natasya</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes:wght@400&display=swap" rel="stylesheet">
@@ -17,14 +17,14 @@
                 <img src="{{ asset('images/hero/wedding.jpeg') }}" alt="Couple Photo" class="couple-photo">
             </div>
 
-            <h1 class="couple-names">B & B</h1>
+            <h1 class="couple-names">Riko & Natasya</h1>
 
             <button class="save-date-btn">
                 <span class="btn-icon"><i class="fa-solid fa-calendar-days"></i></span>
                 <span>Save The Date</span>
             </button>
 
-            <p class="wedding-date">Minggu, 07 Juni 2026</p>
+            <p class="wedding-date">Rabu, 11 November 2026</p>
         </div>
 
         <div class="decor-floral top-left"></div>
@@ -37,11 +37,11 @@
         <a href="#landingPage" class="navbar-item active" aria-label="Beranda">
             <i class="fa-solid fa-house"></i>
         </a>
-        <a href="#gallerySection" class="navbar-item" aria-label="Love Gallery">
-            <i class="fa-solid fa-heart"></i>
-        </a>
         <a href="#dateSection" class="navbar-item" aria-label="Tanggal">
             <i class="fa-solid fa-calendar-days"></i>
+        </a>
+        <a href="#gallerySection" class="navbar-item" aria-label="Love Gallery">
+            <i class="fa-solid fa-heart"></i>
         </a>
         <a href="#locationSection" class="navbar-item" aria-label="Lokasi">
             <i class="fa-solid fa-location-dot"></i>
@@ -52,6 +52,31 @@
     </div>
 
     <div class="page-sections">
+        <section id="dateSection" class="section-block">
+            <div class="section-heading">
+                <span class="section-icon"><i class="fa-solid fa-clock"></i></span>
+                <div>
+                    <h2>Detail Acara</h2>
+                    <p class="section-subtitle">Tanggal dan jadwal penting pernikahan kami.</p>
+                </div>
+            </div>
+
+            <div class="date-grid">
+                <div class="date-card">
+                    <span class="date-label">Akad Nikah</span>
+                    <p class="date-value">Rabu, 11 November 2026</p>
+                    <p class="date-detail">10:00 WIB</p>
+                    <p class="date-detail">Masjid Agung Kota</p>
+                </div>
+                <div class="date-card">
+                    <span class="date-label">Resepsi</span>
+                    <p class="date-value">Minggu, 22 November 2026</p>
+                    <p class="date-detail">12:30 WIB</p>
+                    <p class="date-detail">Ballroom Hotel Central</p>
+                </div>
+            </div>
+        </section>
+
         <section id="gallerySection" class="section-block">
             <div class="section-heading">
                 <span class="section-icon"><i class="fa-solid fa-heart"></i></span>
@@ -70,31 +95,6 @@
                 </div>
                 <div class="gallery-card">
                     <img src="{{ asset('images/hero/wedding.jpeg') }}" alt="Galeri 3">
-                </div>
-            </div>
-        </section>
-
-        <section id="dateSection" class="section-block">
-            <div class="section-heading">
-                <span class="section-icon"><i class="fa-solid fa-clock"></i></span>
-                <div>
-                    <h2>Detail Acara</h2>
-                    <p class="section-subtitle">Tanggal dan jadwal penting pernikahan kami.</p>
-                </div>
-            </div>
-
-            <div class="date-grid">
-                <div class="date-card">
-                    <span class="date-label">Akad Nikah</span>
-                    <p class="date-value">Minggu, 07 Juni 2026</p>
-                    <p class="date-detail">10:00 WIB</p>
-                    <p class="date-detail">Masjid Agung Kota</p>
-                </div>
-                <div class="date-card">
-                    <span class="date-label">Resepsi</span>
-                    <p class="date-value">Minggu, 07 Juni 2026</p>
-                    <p class="date-detail">12:30 WIB</p>
-                    <p class="date-detail">Ballroom Hotel Central</p>
                 </div>
             </div>
         </section>
