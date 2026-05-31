@@ -1587,39 +1587,66 @@ body {
     background: #2d639d;
 }
 
-.gallery-grid {
+.wedding-collage {
+    max-width: 820px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 14px;
+    align-items: start;
 }
 
-.gallery-card {
+.wedding-collage .photo {
     overflow: hidden;
-    border-radius: 28px;
-    box-shadow: 0 16px 32px rgba(44, 83, 136, 0.12);
-    cursor: pointer;
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
 }
 
-.gallery-card img {
-    display: block;
+.wedding-collage .photo img {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
-    filter: grayscale(100%);
-    transition: filter 0.4s ease;
+    display: block;
+    transition: transform .4s ease;
 }
 
-.gallery-card:hover img,
-.gallery-card:focus-within img {
-    filter: grayscale(0%);
+.wedding-collage .photo:hover img {
+    transform: scale(1.03);
 }
 
-.gallery-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 24px 48px rgba(44, 83, 136, 0.18);
+/* FOTO BESAR KIRI */
+.wedding-collage .photo:nth-child(1) {
+    height: 340px;
+}
+
+/* FOTO KANAN ATAS */
+.wedding-collage .photo:nth-child(2) {
+    height: 200px;
+}
+
+/* FOTO KIRI TENGAH */
+.wedding-collage .photo:nth-child(3) {
+    height: 180px;
+}
+
+/* FOTO BESAR KANAN */
+.wedding-collage .photo:nth-child(4) {
+    height: 280px;
+}
+
+/* FOTO CINCIN */
+.wedding-collage .photo:nth-child(5) {
+    height: 220px;
+}
+
+/* FOTO BAWAH */
+.wedding-collage .photo:nth-child(6) {
+    height: 180px;
+}
+
+.left-column,
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
 .date-grid {
@@ -1859,60 +1886,43 @@ body {
 }
 
 .timeline-content {
-    flex: 1;
-    padding: 1.75rem 1.5rem;
-    background: linear-gradient(135deg, rgba(242, 245, 254, 0.95) 0%, rgba(229, 237, 249, 0.85) 100%);
-    border-radius: 20px;
-    border: 1px solid rgba(120, 151, 191, 0.25);
-    box-shadow: 0 12px 32px rgba(26, 49, 94, 0.08);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    max-width: 280px;
+    position: static;
 }
 
 .timeline-content::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 20px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, transparent 100%);
-    pointer-events: none;
+    display: none;
 }
 
 .timeline-content:hover {
-    background: linear-gradient(135deg, rgba(242, 245, 254, 1) 0%, rgba(220, 233, 249, 0.95) 100%);
-    box-shadow: 0 16px 48px rgba(26, 49, 94, 0.15);
-    transform: translateY(-6px);
-    border-color: rgba(120, 151, 191, 0.4);
+    background: transparent;
+    box-shadow: none;
+    transform: none;
 }
 
 .timeline-year {
     display: inline-block;
-    margin-bottom: 0.7rem;
-    padding: 0.5rem 1.2rem;
-    background: linear-gradient(135deg, #25508c 0%, #2d639d 100%);
-    color: #ffffff;
-    border-radius: 24px;
+    color: #25508c;
+    font-size: 12px;
     font-weight: 700;
-    font-size: 0.87rem;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 12px rgba(37, 80, 140, 0.2);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
 }
 
 .timeline-content h3 {
-    margin: 0.8rem 0 0.6rem;
-    color: #1d3a63;
-    font-size: 1.4rem;
-    font-weight: 700;
+    margin: 0 0 8px;
+    color: #25508c;
+    font-size: 1.5rem;
 }
 
 .timeline-content p {
-    margin: 0;
-    color: #5f758f;
-    font-size: 0.98rem;
-    line-height: 1.7;
+    color: #6f7b8a;
+    line-height: 1.8;
+    font-size: 15px;
 }
 
 @media (max-width: 768px) {
@@ -1922,7 +1932,8 @@ body {
     }
 
     .timeline-line {
-        left: 15px;
+        width: 2px;
+        background: #dbe7f7;
     }
 
     .timeline-item {
@@ -1932,10 +1943,12 @@ body {
         margin: 0 !important;
     }
 
-    .timeline-marker {
-        width: 50px;
-        height: 50px;
-        margin-left: -7px;
+   .timeline-marker {
+        width: 18px;
+        height: 18px;
+        border: 3px solid #1f4d8c;
+        background: white;
+        border-radius: 50%;
     }
 
     .timeline-content {

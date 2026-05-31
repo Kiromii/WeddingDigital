@@ -87,16 +87,33 @@
                     <h2>Wedding Gallery</h2>
                     <p class="section-subtitle">Kenangan manis kami dalam momen terbaik.</p>
                 </div>
+                <div class="wedding-collage">
+                    <div class="left-column">
+                        <div class="photo">
+                            <img src="{{ asset('images/hero/wedding.jpeg') }}">
+                        </div>
 
-                <div class="gallery-grid">
-                    <div class="gallery-card">
-                        <img src="{{ asset('images/hero/wedding.jpeg') }}" alt="Galeri 1">
+                        <div class="photo">
+                            <img src="{{ asset('images/hero/wedding.jpeg') }}">
+                        </div>
+
+                        <div class="photo">
+                            <img src="{{ asset('images/hero/wedding.jpeg') }}">
+                        </div>
                     </div>
-                    <div class="gallery-card">
-                        <img src="{{ asset('images/hero/wedding.jpeg') }}" alt="Galeri 2">
-                    </div>
-                    <div class="gallery-card">
-                        <img src="{{ asset('images/hero/wedding.jpeg') }}" alt="Galeri 3">
+
+                    <div class="right-column">
+                        <div class="photo">
+                            <img src="{{ asset('images/hero/wedding.jpeg') }}">
+                        </div>
+
+                        <div class="photo">
+                            <img src="{{ asset('images/hero/wedding.jpeg') }}">
+                        </div>
+
+                        <div class="photo">
+                            <img src="{{ asset('images/hero/wedding.jpeg') }}">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -108,8 +125,8 @@
                 </div>
 
                 <div class="timeline-container">
-                    <div class="timeline-line" id="timelineLine"></div>
-                    
+                    <div class="timeline-line"></div>
+
                     <div class="timeline-item timeline-left">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
@@ -142,7 +159,7 @@
                         <div class="timeline-content">
                             <span class="timeline-year">2026</span>
                             <h3>Tunangan</h3>
-                            <p>Di tempat istimewa yang penuh makna, dia menikuk lututnya dan bertanya "Maukah kau menikahiku?"</p>
+                            <p>Di tempat istimewa yang penuh makna, dia berlutut dan bertanya, "Maukah kau menikahiku?"</p>
                         </div>
                     </div>
                 </div>
@@ -167,8 +184,13 @@
                             <div><i class="fa-solid fa-clock"></i> Pukul 11.00 WIB</div>
                             <div><i class="fa-solid fa-map-marker-alt"></i> Ngaliyan</div>
                         </div>
-                        <div class="event-map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322635!2d106.8269885!3d-6.175092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698c2b3befffff%3A0x9b9c3c0c5c5c5c5c!2sNgaliyan!5e0!3m2!1sid!2sid!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="event-location-btn">
+                            <a href="https://maps.google.com/?q=Ngaliyan"
+                            target="_blank"
+                            class="btn-location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                View Location
+                            </a>
                         </div>
                     </div>
 
@@ -186,8 +208,13 @@
                             <div><i class="fa-solid fa-clock"></i> Pukul 19.00 WIB</div>
                             <div><i class="fa-solid fa-map-marker-alt"></i> Ballroom Hotel Harmoni, Semarang</div>
                         </div>
-                        <div class="event-map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322635!2d106.8269885!3d-6.175092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698c2b3befffff%3A0x9b9c3c0c5c5c5c5c!2sBallroom+Hotel+Harmoni+Semarang!5e0!3m2!1sid!2sid!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="event-location-btn">
+                            <a href="https://maps.google.com/?q=Ballroom+Hotel+Harmoni+Semarang"
+                            target="_blank"
+                            class="btn-location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                View Location
+                            </a>
                         </div>
                     </div>
                 </div>
