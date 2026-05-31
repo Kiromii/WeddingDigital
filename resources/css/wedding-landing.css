@@ -1799,6 +1799,8 @@ body {
     flex-direction: column;
     gap: 2.5rem;
     padding: 1.5rem 0;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .timeline-line {
@@ -1824,17 +1826,15 @@ body {
 }
 
 .timeline-left {
-    flex-direction: row;
-    margin-right: auto;
-    margin-left: 0;
-    width: calc(50% - 1.5rem);
+    width: 50%;
+    padding-right: 50px;
+    justify-content: flex-end;
 }
 
 .timeline-right {
-    flex-direction: row-reverse;
+    width: 50%;
     margin-left: auto;
-    margin-right: 0;
-    width: calc(50% - 1.5rem);
+    padding-left: 50px;
 }
 
 .timeline-left:nth-child(2) {
@@ -1854,13 +1854,14 @@ body {
 }
 
 .timeline-marker {
-    position: relative;
-    flex-shrink: 0;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    top: 10px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border: 3px solid #25508c;
+    border-radius: 50%;
+    z-index: 2;
 }
 
 .timeline-marker::before {
@@ -1894,6 +1895,14 @@ body {
     position: static;
 }
 
+.timeline-left .timeline-marker {
+    right: -59px;
+}
+
+.timeline-right .timeline-marker {
+    left: -59px;
+}
+
 .timeline-content::before {
     display: none;
 }
@@ -1902,6 +1911,15 @@ body {
     background: transparent;
     box-shadow: none;
     transform: none;
+}
+
+.timeline-left .timeline-content {
+    text-align: right;
+    margin-left: auto;
+}
+
+.timeline-right .timeline-content {
+    text-align: left;
 }
 
 .timeline-year {
@@ -2230,6 +2248,7 @@ body {
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #3c587c;
+    text-align: center;
 }
 
 .hero-photo {
@@ -2290,7 +2309,8 @@ body {
 .mempelai-info {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 1rem;
     margin: 1.2rem 0;
     padding: 1.2rem 0;
@@ -2300,7 +2320,7 @@ body {
 
 .mempelai-groom,
 .mempelai-bride {
-    text-align: left;
+    text-align: center;
 }
 
 .mempelai-groom h3,
@@ -2308,6 +2328,7 @@ body {
     margin: 0;
     font-family: "Great Vibes", serif;
     font-size: 2.8rem;
+    text-align: center;
     color: #1d3a63;
     font-weight: 400;
     line-height: 1.2;
@@ -2316,6 +2337,7 @@ body {
 .mempelai-groom p,
 .mempelai-bride p {
     margin: 0.3rem 0 0;
+    text-align: center;
     font-size: 0.8rem;
     color: #5a7a8a;
     line-height: 1.4;
@@ -2323,7 +2345,7 @@ body {
 }
 
 .mempelai-divider {
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: 600;
     color: #3c587c;
     font-style: italic;
@@ -2360,8 +2382,8 @@ body {
 }
 
 .countdown-circle {
-    width: 110px;
-    height: 110px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.15));
     backdrop-filter: blur(15px);
@@ -2374,7 +2396,7 @@ body {
 }
 
 .countdown-number {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #244f85;
     line-height: 1;
@@ -2382,7 +2404,7 @@ body {
 }
 
 .countdown-label {
-    font-size: 0.65rem;
+    font-size: 0.55rem;
     font-weight: 700;
     text-transform: uppercase;
     color: #5a7a8a;
