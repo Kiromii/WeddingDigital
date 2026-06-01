@@ -2194,19 +2194,19 @@ body {
     }
 }
 
-/* Background: foto background-jawa */
+/* Background: foto wedding */
 .hero-bg-parallax {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("/images/hero/background-jawa.jpg");
+    background-image: url("/images/hero/Background-jawa.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     z-index: 1;
-    filter: saturate(1.15) brightness(0.78);
+    filter: saturate(1.1) brightness(0.75);
     will-change: transform;
 }
 

@@ -14,7 +14,6 @@
             <div class="hero-bg-parallax"
                 style="background-image: url('{{ asset('images/hero/background-jawa.jpg') }}')">
             </div>
-
             <div class="hero-content">
                 <div class="hero-copy">
                     <p class="hero-label">The Wedding Of</p>
