@@ -514,37 +514,6 @@ body {
     }
 }
 
-/* Photo animasi */
-
-.photo-door {
-    position: fixed;
-    top: 0;
-    width: 50vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-    transform-origin: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow:
-        inset 0 0 30px rgba(0, 0, 0, 0.1),
-        0 10px 40px rgba(0, 0, 0, 0.15);
-    filter: blur(2px);
-}
-
-.photo-left {
-    left: 0;
-    transform: translateX(0);
-}
-
-.photo-right {
-    right: 0;
-    transform: translateX(0);
-}
-
 /* Subtle center dividing line */
 .landing-page::after {
     content: "";
@@ -557,15 +526,6 @@ body {
     background-color: rgba(0, 0, 0, 0.08);
     z-index: 101;
     pointer-events: none;
-}
-
-/* Photo opening animation - slide out */
-.photo-door.opening-left {
-    animation: slideOutLeft 1s ease-in-out forwards;
-}
-
-.photo-door.opening-right {
-    animation: slideOutRight 1s ease-in-out forwards;
 }
 
 .paper-content {
@@ -1605,7 +1565,7 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform .4s ease;
+    transition: transform 0.4s ease;
 }
 
 .wedding-collage .photo:hover img {
@@ -1872,7 +1832,9 @@ body {
     border-radius: 50%;
     background: #25508c;
     border: 4px solid #ffffff;
-    box-shadow: 0 0 0 4px #25508c, 0 4px 16px rgba(37, 80, 140, 0.25);
+    box-shadow:
+        0 0 0 4px #25508c,
+        0 4px 16px rgba(37, 80, 140, 0.25);
     z-index: 2;
 }
 
@@ -1887,11 +1849,16 @@ body {
 }
 
 .timeline-content {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    max-width: 280px;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.96),
+        rgba(244, 248, 253, 0.96)
+    );
+    border: 1px solid rgba(120, 151, 191, 0.22);
+    box-shadow: 0 14px 30px rgba(26, 49, 94, 0.08);
+    padding: 1.35rem 1.4rem;
+    max-width: 320px;
+    border-radius: 20px;
     position: static;
 }
 
@@ -1908,9 +1875,8 @@ body {
 }
 
 .timeline-content:hover {
-    background: transparent;
-    box-shadow: none;
-    transform: none;
+    box-shadow: 0 18px 34px rgba(26, 49, 94, 0.12);
+    transform: translateY(-2px);
 }
 
 .timeline-left .timeline-content {
@@ -1925,22 +1891,22 @@ body {
 .timeline-year {
     display: inline-block;
     color: #25508c;
-    font-size: 12px;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 12px;
 }
 
 .timeline-content h3 {
-    margin: 0 0 8px;
+    margin: 0 0 10px;
     color: #25508c;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
 }
 
 .timeline-content p {
     color: #6f7b8a;
-    line-height: 1.8;
-    font-size: 15px;
+    line-height: 1.75;
+    font-size: 0.96rem;
 }
 
 @media (max-width: 768px) {
@@ -1961,7 +1927,13 @@ body {
         margin: 0 !important;
     }
 
-   .timeline-marker {
+    .timeline-left,
+    .timeline-right {
+        width: 100%;
+        padding: 0 0 0 2rem;
+    }
+
+    .timeline-marker {
         width: 18px;
         height: 18px;
         border: 3px solid #1f4d8c;
@@ -1969,11 +1941,20 @@ body {
         border-radius: 50%;
     }
 
+    .timeline-left .timeline-marker,
+    .timeline-right .timeline-marker {
+        left: -1px;
+        right: auto;
+    }
+
     .timeline-content {
-        padding: 1.3rem;
+        max-width: 100%;
+        width: 100%;
+        padding: 1.2rem 1.1rem;
         border: 1px solid rgba(120, 151, 191, 0.25);
         border-left: 4px solid #25508c;
-        margin-left: 2rem;
+        margin-left: 0;
+        border-radius: 18px;
     }
 
     .timeline-content h3 {
@@ -2185,125 +2166,99 @@ body {
     background: linear-gradient(180deg, #f8f2e8 0%, #f1ece4 38%, #f2f6ff 100%);
 }
 
+/* ============================================
+   HERO SECTION — foto wedding sebagai background
+   ============================================ */
+
 .hero-wrap {
     position: relative;
-    min-height: 88vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem 1rem 0;
     overflow: hidden;
-    background-attachment: fixed;
 }
 
+@media (max-width: 1024px) {
+    .hero-wrap {
+        min-height: 85vh;
+        padding: 1.5rem 1rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-wrap {
+        min-height: 100vh;
+        padding: 1rem 0.5rem 0;
+    }
+}
+
+/* Background: foto background-jawa */
 .hero-bg-parallax {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/images/background-jawa.jpg');
+    background-image: url("/images/hero/background-jawa.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     z-index: 1;
-    opacity: 0.85;
+    filter: saturate(1.15) brightness(0.78);
+    will-change: transform;
 }
 
+/* Overlay gelap agar teks terbaca */
 .hero-wrap::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(45, 99, 157, 0.4), rgba(100, 150, 200, 0.3));
+    background: linear-gradient(
+        180deg,
+        rgba(10, 20, 40, 0.45) 0%,
+        rgba(10, 20, 40, 0.3) 60%,
+        rgba(10, 20, 40, 0.55) 100%
+    );
     z-index: 2;
 }
 
 .hero-content {
     position: relative;
     z-index: 10;
-    width: min(100%, 1000px);
+    width: min(100%, 680px);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-    text-align: left;
-    padding: 2rem;
+    justify-content: center;
+    gap: 0;
+    text-align: center;
+    padding: 3rem 2rem;
 }
 
 .hero-copy {
-    flex: 1;
-    min-width: 320px;
-    text-align: left;
-}
-
-.hero-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #3c587c;
+    width: 100%;
     text-align: center;
 }
 
-.hero-photo {
-    width: 45%;
-    min-width: 300px;
-    aspect-ratio: 3 / 4;
-    border-radius: 24px;
-    overflow: hidden;
-    background: linear-gradient(135deg, rgba(45, 99, 157, 0.3), rgba(100, 150, 200, 0.2));
-    box-shadow: 0 20px 60px rgba(20, 46, 90, 0.25);
-    flex-shrink: 0;
-}
-
-.hero-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* Semua teks hero jadi putih */
+.hero-label {
     display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
 }
 
 .hero-title {
     display: none;
-}
-
-.btn-save-date {
-    margin: 1rem auto 0;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2.5rem;
-    border-radius: 999px;
-    background: #244f85;
-    color: #ffffff;
-    border: none;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        box-shadow 0.25s ease;
-    box-shadow: 0 8px 24px rgba(36, 79, 133, 0.3);
-}
-
-.btn-save-date:hover {
-    transform: translateY(-2px);
-    background: #2d639d;
-    box-shadow: 0 12px 32px rgba(36, 79, 133, 0.4);
-}
-
-.hero-date {
-    margin-top: 0.5rem;
-    color: #4f6a8d;
-    font-weight: 600;
-    font-size: 1rem;
 }
 
 .mempelai-info {
@@ -2314,8 +2269,8 @@ body {
     gap: 1rem;
     margin: 1.2rem 0;
     padding: 1.2rem 0;
-    border-top: 1px solid rgba(79, 106, 141, 0.2);
-    border-bottom: 1px solid rgba(79, 106, 141, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .mempelai-groom,
@@ -2327,43 +2282,52 @@ body {
 .mempelai-bride h3 {
     margin: 0;
     font-family: "Great Vibes", serif;
-    font-size: 2.8rem;
+    font-size: 3.8rem;
     text-align: center;
-    color: #1d3a63;
+    color: #ffffff;
     font-weight: 400;
     line-height: 1.2;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 .mempelai-groom p,
 .mempelai-bride p {
     margin: 0.3rem 0 0;
     text-align: center;
-    font-size: 0.8rem;
-    color: #5a7a8a;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.4;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .mempelai-divider {
     font-size: 2rem;
     font-weight: 600;
-    color: #3c587c;
+    color: rgba(255, 255, 255, 0.9);
     font-style: italic;
+}
+
+.hero-date {
+    margin-top: 0.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+    font-size: 1.3rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 .countdown-wrapper {
     margin-top: 2.5rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(79, 106, 141, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .countdown-title {
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #3c587c;
+    color: rgba(255, 255, 255, 0.85);
     margin-bottom: 1.2rem;
 }
 
@@ -2385,20 +2349,22 @@ body {
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.15));
-    backdrop-filter: blur(15px);
-    border: 2.5px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 255, 255, 0.35);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.2),
+        inset 0 1px 1px rgba(255, 255, 255, 0.25);
 }
 
 .countdown-number {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: #244f85;
+    color: #ffffff;
     line-height: 1;
     font-family: "Playfair Display", serif;
 }
@@ -2407,9 +2373,36 @@ body {
     font-size: 0.55rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: #5a7a8a;
+    color: rgba(255, 255, 255, 0.75);
     letter-spacing: 0.8px;
     margin-top: 0.5rem;
+}
+
+.btn-save-date {
+    margin: 2rem auto 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.btn-save-date:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
 }
 
 .hero-accent {
@@ -2458,17 +2451,35 @@ body {
 .intro-block {
     margin-top: -4rem;
     padding: 2rem 2rem 2.5rem;
-    background: rgba(255, 255, 255, 0.98);
+    background-image: url("/images/background-jawa.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     border: 1px solid rgba(148, 167, 194, 0.35);
     border-radius: 32px;
     box-shadow: 0 20px 40px rgba(38, 70, 115, 0.08);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.92);
+    z-index: -1;
 }
 
 .intro-block h2 {
     margin: 0;
     font-size: 2.1rem;
     color: #1d3a63;
+    position: relative;
+    z-index: 1;
 }
 
 .intro-block p {
@@ -2476,6 +2487,8 @@ body {
     color: #5f758f;
     font-size: 1rem;
     line-height: 1.8;
+    position: relative;
+    z-index: 1;
 }
 
 .intro-subtitle {
@@ -2490,29 +2503,25 @@ body {
 
 @media (max-width: 900px) {
     .hero-content {
-        flex-direction: column;
-        align-items: center;
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
     }
 
-    .hero-photo {
-        width: 100%;
-        max-width: 380px;
-        aspect-ratio: 3 / 4;
+    .mempelai-groom h3,
+    .mempelai-bride h3 {
+        font-size: 3rem;
     }
 
-    .hero-title {
-        font-size: clamp(2.8rem, 8vw, 4.2rem);
-        text-align: center;
+    .hero-date {
+        font-size: 1.2rem;
     }
 
     .countdown-circle {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     }
 
     .countdown-number {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
     }
 
     .wave-divider {
@@ -2527,47 +2536,44 @@ body {
     }
 
     .hero-content {
-        width: calc(100% - 1.5rem);
-        margin: 0 auto;
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-    }
-
-    .hero-photo {
-        width: 100%;
-        max-width: 100%;
-        aspect-ratio: 3 / 4;
-    }
-
-    .hero-copy {
-        width: 100%;
-    }
-
-    .hero-label {
-        font-size: 1rem;
-    }
-
-    .hero-title {
-        font-size: clamp(2.2rem, 6vw, 3.5rem);
-    }
-
-    .countdown-circle {
-        width: 80px;
-        height: 80px;
-    }
-
-    .countdown-number {
-        font-size: 1.4rem;
-    }
-
-    .countdown-label {
-        font-size: 0.65rem;
+        width: calc(100% - 1rem);
+        padding: 2rem 1rem;
     }
 
     .mempelai-groom h3,
     .mempelai-bride h3 {
-        font-size: 1.4rem;
+        font-size: clamp(2rem, 7vw, 2.8rem);
+    }
+
+    .mempelai-groom p,
+    .mempelai-bride p {
+        font-size: 0.85rem;
+    }
+
+    .mempelai-divider {
+        font-size: 1.5rem;
+    }
+
+    .hero-date {
+        font-size: 1rem;
+    }
+
+    .countdown-wrapper {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .countdown {
+        gap: 1rem;
+    }
+
+    .countdown-circle {
+        width: 65px;
+        height: 65px;
+    }
+
+    .countdown-number {
+        font-size: 1.3rem;
     }
 
     .btn-save-date {
@@ -2576,34 +2582,90 @@ body {
         padding: 0.9rem 1.5rem;
     }
 
+    .intro-block {
+        margin-top: -3rem;
+        padding: 1.4rem 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-wrap {
+        padding: 0;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+
+    .hero-label {
+        font-size: 0.85rem;
+    }
+
+    .mempelai-groom h3,
+    .mempelai-bride h3 {
+        font-size: clamp(1.8rem, 6vw, 2.4rem);
+    }
+
+    .mempelai-groom p,
+    .mempelai-bride p {
+        font-size: 0.8rem;
+    }
+
+    .mempelai-divider {
+        font-size: 1.2rem;
+    }
+
+    .mempelai-info {
+        gap: 0.8rem;
+        margin: 0.8rem 0;
+        padding: 0.8rem 0;
+    }
+
+    .hero-date {
+        font-size: 0.9rem;
+    }
+
+    .countdown-wrapper {
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+
+    .countdown-title {
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .countdown {
+        gap: 0.8rem;
+    }
+
+    .countdown-circle {
+        width: 58px;
+        height: 58px;
+    }
+
+    .countdown-number {
+        font-size: 1.2rem;
+    }
+
+    .countdown-label {
+        font-size: 0.42rem;
+    }
+
+    .btn-save-date {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        font-size: 0.9rem;
+        margin-top: 1.2rem;
+    }
+
     .btn-send,
     .btn-whatsapp {
         width: 100%;
         justify-content: center;
         padding: 0.9rem 1.5rem;
         font-size: 0.9rem;
-    }
-
-    .page-sections {
-        padding: 0 0.85rem 4rem;
-    }
-
-    .intro-block {
-        margin-top: -3rem;
-        padding: 1.4rem 1.2rem;
-    }
-
-    .gallery-card img {
-        height: 160px;
-    }
-
-    .event-info {
-        padding-left: 1.8rem;
-    }
-
-    .btn-view-location {
-        width: 100%;
-        justify-content: center;
     }
 
     .bottom-navbar {

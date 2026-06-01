@@ -38,6 +38,11 @@ function initializeElements() {
     // ============================================
     initializeCountdown();
 
+    // ============================================
+    // PARALLAX EFFECT FOR HERO SECTION
+    // ============================================
+    initializeParallax();
+
     // Skip remaining initialization if monogramCircle doesn't exist (landing page)
     if (!monogramCircle) {
         return;
@@ -369,6 +374,27 @@ function initializeElements() {
 
         // Initial call
         updateTimelineHeight();
+    }
+
+    function initializeParallax() {
+        const heroBgParallax = document.querySelector(".hero-bg-parallax");
+
+        if (!heroBgParallax) return;
+
+        // Function to update parallax effect
+        function updateParallax() {
+            const scrollPosition = window.scrollY;
+            // Move background slower than scroll for parallax effect
+            // Using a lower multiplier creates the parallax depth effect
+            const offset = scrollPosition * 0.5;
+            heroBgParallax.style.transform = `translateY(${offset}px)`;
+        }
+
+        // Add scroll event listener with passive flag for better performance
+        window.addEventListener("scroll", updateParallax, { passive: true });
+
+        // Initialize parallax on page load
+        updateParallax();
     }
 
     function initializeCountdown() {

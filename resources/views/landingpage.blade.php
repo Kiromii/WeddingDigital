@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan - Dimas & Risma</title>
+    <title>Undangan Pernikahan - Riko & Natasya</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes:wght@400&display=swap" rel="stylesheet">
@@ -11,13 +11,11 @@
 <body>
     <div class="page-shell">
         <section class="hero-wrap" id="landingPage">
-            <div class="hero-bg-parallax"></div>
-            
-            <div class="hero-content">
-                <div class="hero-photo">
-                    <img src="{{ asset('images/hero/wedding.jpeg') }}" alt="Natasya & Riko">
-                </div>
+            <div class="hero-bg-parallax"
+                style="background-image: url('{{ asset('images/hero/background-jawa.jpg') }}')">
+            </div>
 
+            <div class="hero-content">
                 <div class="hero-copy">
                     <p class="hero-label">The Wedding Of</p>
                     <div class="mempelai-info">
@@ -34,7 +32,7 @@
                         </div>
                         <p class="hero-date">Rabu, 11 November 2026</p>
                     </div>
-                    
+
                     <div class="countdown-wrapper">
                         <div class="countdown-title">Menuju Hari Istimewa</div>
                         <div class="countdown" id="countdown">
@@ -64,7 +62,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <button class="btn-save-date">
                         <i class="fa-solid fa-calendar-days"></i>
                         Save The Date
@@ -92,25 +90,20 @@
                         <div class="photo">
                             <img src="{{ asset('images/hero/wedding.jpeg') }}">
                         </div>
-
                         <div class="photo">
                             <img src="{{ asset('images/hero/wedding.jpeg') }}">
                         </div>
-
                         <div class="photo">
                             <img src="{{ asset('images/hero/wedding.jpeg') }}">
                         </div>
                     </div>
-
                     <div class="right-column">
                         <div class="photo">
                             <img src="{{ asset('images/hero/wedding.jpeg') }}">
                         </div>
-
                         <div class="photo">
                             <img src="{{ asset('images/hero/wedding.jpeg') }}">
                         </div>
-
                         <div class="photo">
                             <img src="{{ asset('images/hero/wedding.jpeg') }}">
                         </div>
@@ -130,36 +123,32 @@
                     <div class="timeline-item timeline-left">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
-                            <span class="timeline-year">2019</span>
-                            <h3>Pertama Bertemu</h3>
-                            <p>Kami bertemu di sebuah acara keluarga yang indah. Saat itu, segalanya terasa istimewa dan kami langsung terhubung.</p>
+                            <h3>Awal Bertemu</h3>
+                            <p>Saat praktik kerja lapangan / PKL di kantor pemerintah opo kecamatan, terus cowo e nganter surat.</p>
                         </div>
                     </div>
 
                     <div class="timeline-item timeline-right">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
-                            <span class="timeline-year">2021</span>
-                            <h3>Kencan Pertama</h3>
-                            <p>Kami memulai perjalanan romantis dengan kencan pertama di restoran favorit kami. Momen indah yang tak terlupakan.</p>
+                            <h3>Menjalin Hubungan</h3>
+                            <p>Awal mula tukar WA untuk menghubungi bahwa kalau surat tersebut dari mana dan bertujuan untuk apa, gara-gara aku anak magang dadi kan gak tau. Neng kono mulai kenal seminggu kemudian jadian.</p>
                         </div>
                     </div>
 
                     <div class="timeline-item timeline-left">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
-                            <span class="timeline-year">2023</span>
-                            <h3>Perjalanan Bersama</h3>
-                            <p>Kami melakukan perjalanan ke berbagai negara, menciptakan kenangan indah dan memperkuat ikatan kami.</p>
+                            <h3>Lamaran</h3>
+                            <p>Sebelum e sih masih tembung gara-gara jauh kan Blora Semarang, jadi lamarane di H-1 sebelum lamaran.</p>
                         </div>
                     </div>
 
                     <div class="timeline-item timeline-right">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
-                            <span class="timeline-year">2026</span>
-                            <h3>Tunangan</h3>
-                            <p>Di tempat istimewa yang penuh makna, dia berlutut dan bertanya, "Maukah kau menikahiku?"</p>
+                            <h3>Menikah</h3>
+                            <p>Melangsungkan pernikahan.</p>
                         </div>
                     </div>
                 </div>
@@ -185,9 +174,7 @@
                             <div><i class="fa-solid fa-map-marker-alt"></i> Ngaliyan</div>
                         </div>
                         <div class="event-location-btn">
-                            <a href="https://maps.google.com/?q=Ngaliyan"
-                            target="_blank"
-                            class="btn-location">
+                            <a href="https://maps.google.com/?q=Ngaliyan" target="_blank" class="btn-location">
                                 <i class="fa-solid fa-location-dot"></i>
                                 View Location
                             </a>
@@ -209,9 +196,7 @@
                             <div><i class="fa-solid fa-map-marker-alt"></i> Ballroom Hotel Harmoni, Semarang</div>
                         </div>
                         <div class="event-location-btn">
-                            <a href="https://maps.google.com/?q=Ballroom+Hotel+Harmoni+Semarang"
-                            target="_blank"
-                            class="btn-location">
+                            <a href="https://maps.google.com/?q=Ballroom+Hotel+Harmoni+Semarang" target="_blank" class="btn-location">
                                 <i class="fa-solid fa-location-dot"></i>
                                 View Location
                             </a>
@@ -237,7 +222,7 @@
                     </div>
                     <div class="form-actions">
                         <button type="submit" class="btn-send">Kirim Pesan</button>
-                        <a href="https://wa.me/62812345678?text=Assalamualaikum%20Natasya%20%26%20Riko%2C%20saya%20ingin%20memberikan%20ucapan%20selamat%20atas%20pernikahan%20kalian" target="_blank" class="btn-whatsapp">
+                        <a href="https://wa.me/6288226668254?text=Assalamualaikum%20Natasya%20%26%20Riko%2C%20saya%20ingin%20memberikan%20ucapan%20selamat%20atas%20pernikahan%20kalian" target="_blank" class="btn-whatsapp">
                             <i class="fa-brands fa-whatsapp"></i>
                             Ucapkan melalui WhatsApp
                         </a>
