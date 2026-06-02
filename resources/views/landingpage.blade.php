@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan - Dimas & Risma</title>
+    <title>Undangan Pernikahan - Riko & Natasya</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes:wght@400&display=swap" rel="stylesheet">
@@ -72,10 +72,29 @@
         </section>
 
         <div class="wave-divider"></div>
+        
+        <section class="quote-section">
+            <div class="quote-container">
+
+                <h3 class="quote-title">QS. Ar-Rum Ayat 21</h3>
+
+                <p class="quote-arab">
+                    وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنْفُسِكُمْ
+                    أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم
+                    مَّوَدَّةً وَرَحْمَةً
+                </p>
+
+                <p class="quote-translation">
+                    Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan
+                    pasangan-pasangan untukmu dari jenismu sendiri agar kamu merasa
+                    tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.
+                </p>
+
+            </div>
+        </section>
 
         <section class="content-sections">
             <div class="section-block intro-block">
-                <h2>Momen Indah Kami</h2>
                 <p>Sunnatulloh wa Ahsanu Ahsan • سنة الله وأحسن أحسن</p>
                 <p class="intro-subtitle">Semua momen indah kami dikemas dalam satu halaman, supaya terasa nyatu dan mudah dinikmati.</p>
             </div>

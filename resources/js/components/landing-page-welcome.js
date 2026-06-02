@@ -378,22 +378,29 @@ function initializeElements() {
 
     function initializeParallax() {
         const heroBgParallax = document.querySelector(".hero-bg-parallax");
+        const galleryBgParallax = document.querySelector(".gallery-bg-parallax");
+        const gallerySection = document.querySelector(".gallery-section");
 
-        if (!heroBgParallax) return;
+        if (!heroBgParallax && !galleryBgParallax) return;
 
-        // Function to update parallax effect
+        // Function to update parallax effects
         function updateParallax() {
             const scrollPosition = window.scrollY;
-            // Move background slower than scroll for parallax effect
-            // Using a lower multiplier creates the parallax depth effect
-            const offset = scrollPosition * 0.5;
-            heroBgParallax.style.transform = `translateY(${offset}px)`;
+
+            if (heroBgParallax) {
+                const offset = scrollPosition * 0.5;
+                heroBgParallax.style.transform = `translateY(${offset}px)`;
+            }
+
+            if (galleryBgParallax && gallerySection) {
+                const sectionTop = gallerySection.offsetTop;
+                const galleryScroll = scrollPosition - sectionTop;
+                const offset = galleryScroll * 0.25;
+                galleryBgParallax.style.transform = `translateY(${offset}px)`;
+            }
         }
 
-        // Add scroll event listener with passive flag for better performance
         window.addEventListener("scroll", updateParallax, { passive: true });
-
-        // Initialize parallax on page load
         updateParallax();
     }
 
