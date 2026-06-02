@@ -111,7 +111,6 @@
         <div class="parallax-bg" style="background-image: url('{{ asset('images/hero/background-jawa.jpg') }}')"></div>
         <div class="parallax-overlay" style="background: linear-gradient(180deg, rgba(5,12,30,0.7) 0%, rgba(5,12,30,0.55) 100%)"></div>
         <div class="section-content">
-            <div class="section-label">Perjalanan Kami</div>
             <h2 class="section-title">Our Love Story</h2>
             <p class="section-sub">Setiap langkah yang membawa kami ke hari ini</p>
             <div class="gallery-ornament"><span></span><i class="fa-solid fa-heart"></i><span></span></div>
