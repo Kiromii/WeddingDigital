@@ -69,7 +69,7 @@
 
     <!-- ========== QUOTE ========== -->
     <section class="section-quote" id="quoteSection"
-    style="background-image: url('{{ asset('images/backgroundflower3.jpg') }}')">
+    style="background-image: url('{{ asset('images/backgroundquote.jpg') }}')">
         <div class="quote-overlay"></div>
         <div class="section-content quote-content">
             <div class="quote-bismillah">﷽</div>
@@ -198,23 +198,6 @@
             <form class="message-form" id="messageForm">
                 <div class="form-group">
                     <input type="text" id="guestName" name="guestName" placeholder="Nama Anda" required>
-                </div>
-                <div class="form-group">
-                    <label class="attendance-label">Konfirmasi Kehadiran</label>
-                    <div class="attendance-options">
-                        <label class="attendance-option">
-                            <input type="radio" name="attendance" value="hadir" required>
-                            <span><i class="fa-solid fa-circle-check"></i> Hadir</span>
-                        </label>
-                        <label class="attendance-option">
-                            <input type="radio" name="attendance" value="tidak_hadir">
-                            <span><i class="fa-solid fa-circle-xmark"></i> Tidak Hadir</span>
-                        </label>
-                        <label class="attendance-option">
-                            <input type="radio" name="attendance" value="ragu">
-                            <span><i class="fa-solid fa-circle-question"></i> Masih Ragu</span>
-                        </label>
-                    </div>
                 </div>
                 <div class="form-group">
                     <textarea id="guestMessage" name="guestMessage" placeholder="Tulis pesan atau doa..." rows="4" required></textarea>
