@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan - Riko & Natasya</title>
+    <title>Undangan Pernikahan - Dimas & Risma</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes:wght@400&display=swap" rel="stylesheet">
@@ -11,9 +11,10 @@
 <body>
     <div class="page-shell">
         <section class="hero-wrap" id="landingPage">
-            <div class="hero-bg-parallax"
+            <div class="hero-bg-parallax" 
                 style="background-image: url('{{ asset('images/hero/background-jawa.jpg') }}')">
             </div>
+
             <div class="hero-content">
                 <div class="hero-copy">
                     <p class="hero-label">The Wedding Of</p>
@@ -78,11 +79,16 @@
                 <p>Sunnatulloh wa Ahsanu Ahsan • سنة الله وأحسن أحسن</p>
                 <p class="intro-subtitle">Semua momen indah kami dikemas dalam satu halaman, supaya terasa nyatu dan mudah dinikmati.</p>
             </div>
+        </section>
 
-            <section id="gallerySection" class="section-block">
+        <section id="gallerySection" class="gallery-section">
+            <div class="gallery-bg-parallax"
+                 style="background-image: url('{{ asset('images/backgroundflower2.jpg') }}')"></div>
+            <div class="gallery-overlay"></div>
+            <div class="gallery-inner">
                 <div class="section-heading section-heading-center">
-                    <h2>Wedding Gallery</h2>
-                    <p class="section-subtitle">Kenangan manis kami dalam momen terbaik.</p>
+                    <h2 class="gallery-title">Wedding Gallery</h2>
+                    <p class="gallery-subtitle">Kenangan manis kami dalam momen terbaik.</p>
                 </div>
                 <div class="wedding-collage">
                     <div class="left-column">
@@ -108,8 +114,10 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
+        <section class="content-sections">
             <section id="loveStorySection" class="section-block">
                 <div class="section-heading section-heading-center">
                     <h2>Our Love Story</h2>
@@ -235,6 +243,33 @@
         </section>
     </div>
 
+
+    <!-- Thank You Section -->
+    <section class="thankyou-section">
+        <div class="thankyou-overlay"></div>
+        <div class="thankyou-content">
+            <div class="thankyou-top-ornament">
+                <span></span><span></span><span></span>
+            </div>
+            <p class="thankyou-label">With Love</p>
+            <h2 class="thankyou-title">Thank You</h2>
+            <h3 class="thankyou-names">Natasya &amp; Riko</h3>
+            <div class="thankyou-divider"></div>
+            <p class="thankyou-quote">
+                Terima kasih telah menjadi bagian dari hari paling istimewa dalam hidup kami.<br>
+                Kehadiran, doa, dan senyum kalian adalah hadiah terindah yang tak ternilai harganya.
+            </p>
+            <p class="thankyou-sub">
+                Semoga setiap kebaikan yang kalian berikan kembali berlipat ganda.<br>
+                Kami sangat bahagia bisa berbagi momen ini bersama orang-orang terkasih. 🤍
+            </p>
+            <div class="thankyou-bottom-ornament">
+                <span></span>
+                <i class="fa-solid fa-heart"></i>
+                <span></span>
+            </div>
+        </div>
+    </section>
     <div class="bottom-navbar">
         <a href="#landingPage" class="navbar-item active" aria-label="Beranda">
             <i class="fa-solid fa-house"></i>
@@ -252,5 +287,41 @@
             <i class="fa-solid fa-comment"></i>
         </a>
     </div>
+
+    <script>
+        // Parallax effect untuk hero background (mobile-safe)
+        (function() {
+            var hero = document.querySelector('.hero-bg-parallax');
+            var gallery = document.querySelector('.gallery-bg-parallax');
+            var ticking = false;
+
+            function updateParallax() {
+                var scrollY = window.scrollY || window.pageYOffset;
+
+                // Hero parallax
+                if (hero) {
+                    hero.style.transform = 'translateY(' + (scrollY * 0.4) + 'px)';
+                }
+
+                // Gallery parallax
+                if (gallery) {
+                    var gallerySection = document.getElementById('gallerySection');
+                    var rect = gallerySection.getBoundingClientRect();
+                    var offsetFromTop = scrollY + rect.top;
+                    var relativeScroll = scrollY - offsetFromTop;
+                    gallery.style.transform = 'translateY(' + (relativeScroll * 0.35) + 'px)';
+                }
+
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            }, { passive: true });
+        })();
+    </script>
 </body>
 </html>
