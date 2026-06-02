@@ -113,41 +113,66 @@
         <div class="parallax-bg" style="background-image: url('{{ asset('images/backgroundlovestory.jpg') }}')"></div>
         <div class="parallax-overlay" style="background: linear-gradient(180deg, rgba(5,12,30,0.7) 0%, rgba(5,12,30,0.55) 100%)"></div>
         <div class="section-content">
-            <div class="section-label">Perjalanan Kami</div>
-            <h2 class="section-title">Our Love Story</h2>
-            <p class="section-sub">Setiap langkah yang membawa kami ke hari ini</p>
-            <div class="gallery-ornament"><span></span><i class="fa-solid fa-heart"></i><span></span></div>
+
+            <div class="ls-header">
+                <em class="ls-script">Our</em>
+                <h2 class="ls-heading">Love Story</h2>
+                <div class="ls-header-line"><span></span><i class="fa-solid fa-heart"></i><span></span></div>
+                <p class="ls-subtext">Empat langkah kecil yang membawa kami ke satu ikatan selamanya.</p>
+            </div>
+
             <div class="timeline-container">
-                <div class="timeline-line"></div>
-                <div class="timeline-item timeline-left">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Awal Bertemu</h3>
-                        <p>Saat praktik kerja lapangan / PKL di kantor pemerintah kecamatan, saat itulah kami pertama kali berjumpa.</p>
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item timeline-right">
+                <div class="timeline-marker"><i class="fa-solid fa-heart"></i></div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-number">01</span>
+                        <h3>Pertemuan</h3>
                     </div>
-                </div>
-                <div class="timeline-item timeline-right">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Menjalin Hubungan</h3>
-                        <p>Dari tukar nomor WA untuk urusan surat, lalu mulai saling mengenal — seminggu kemudian kami resmi bersama.</p>
-                    </div>
-                </div>
-                <div class="timeline-item timeline-left">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Lamaran</h3>
-                        <p>Meski jarak Blora–Semarang memisahkan, cinta kami tak pernah redup hingga tiba saat lamaran yang penuh haru.</p>
-                    </div>
-                </div>
-                <div class="timeline-item timeline-right">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Menikah</h3>
-                        <p>Akhirnya, di hadapan Allah dan orang-orang tercinta, kami resmi menjadi sepasang suami istri.</p>
-                    </div>
+                    <p>Saat praktik kerja lapangan di kantor pemerintah kecamatan, saat itulah kami pertama kali berjumpa dan saling mengenal.</p>
+                    <div class="timeline-date-row">Mei 2022</div>
                 </div>
             </div>
+
+            <div class="timeline-item timeline-left">
+                <div class="timeline-marker"><i class="fa-solid fa-people-arrows"></i></div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-number">02</span>
+                        <h3>Menjalin Hubungan</h3>
+                    </div>
+                    <p>Dari tukar nomor WA untuk urusan surat, lalu mulai saling mengenal — seminggu kemudian kami resmi bersama.</p>
+                    <div class="timeline-date-row">Agustus 2022</div>
+                </div>
+            </div>
+
+            <div class="timeline-item timeline-right">
+                <div class="timeline-marker"><i class="fa-solid fa-ring"></i></div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-number">03</span>
+                        <h3>Lamaran</h3>
+                    </div>
+                    <p>Meski jarak Blora–Semarang memisahkan, cinta kami tak pernah redup hingga tiba saat lamaran yang penuh haru.</p>
+                    <div class="timeline-date-row">12 November 2023</div>
+                </div>
+            </div>
+
+            <div class="timeline-item timeline-left">
+                <div class="timeline-marker"><i class="fa-solid fa-church"></i></div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-number">04</span>
+                        <h3>Pernikahan</h3>
+                    </div>
+                    <p>Akhirnya, di hadapan Allah dan orang-orang tercinta, kami resmi menjadi sepasang suami istri.</p>
+                    <div class="timeline-date-row">11 November 2026</div>
+                </div>
+            </div>
+        </div>
+
         </div>
     </section>
 
