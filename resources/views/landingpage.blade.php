@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- ========== HERO ========== -->
     <section class="section-parallax" id="landingPage">
         <div class="parallax-bg" style="background-image: url('{{ asset('images/hero/background-jawa.jpg') }}')"></div>
         <div class="parallax-overlay"></div>
@@ -64,21 +66,21 @@
         </div>
     </section>
 
+
     <!-- ========== QUOTE ========== -->
-    <section class="section-parallax" id="quoteSection">
-        <div class="parallax-bg" style="background-image: url('{{ asset('images/hero/background-jawa.jpg') }}')"></div>
-        <div class="parallax-overlay" style="background: linear-gradient(180deg, rgba(5,12,30,0.75) 0%, rgba(5,12,30,0.6) 100%)"></div>
-        <div class="section-content">
-            <div class="section-label">Firman Allah SWT</div>
-            <div class="gallery-ornament"><span></span><i class="fa-solid fa-star-and-crescent"></i><span></span></div>
-            <p class="quran-arabic">
-                وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ
+    <section class="section-quote" id="quoteSection"
+    style="background-image: url('{{ asset('images/backgroundflower3.jpg') }}')">
+        <div class="quote-overlay"></div>
+        <div class="section-content quote-content">
+            <div class="quote-bismillah">﷽</div>
+            <div class="quote-ref">QS. Ar-Rum : 21</div>
+            <p class="quote-arabic">
+                وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ
             </p>
-            <div class="thankyou-divider"></div>
-            <p class="quran-translation">
-                "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+            <div class="quote-divider"><span></span><i class="fa-solid fa-star-and-crescent"></i><span></span></div>
+            <p class="quote-translation">
+                "Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda kebesaran Allah bagi kaum yang berpikir."
             </p>
-            <p class="quran-source">QS. Ar-Rum : 21</p>
         </div>
     </section>
 
@@ -92,25 +94,26 @@
             <p class="section-sub">Kenangan manis kami dalam setiap momen terbaik</p>
             <div class="gallery-ornament"><span></span><i class="fa-solid fa-heart"></i><span></span></div>
             <div class="wedding-collage">
-                <div class="left-column">
-                    <div class="photo"><img src="{{ asset('images/hero/wedding.jpeg') }}"></div>
-                    <div class="photo"><img src="{{ asset('images/hero/wedding.jpeg') }}"></div>
-                    <div class="photo"><img src="{{ asset('images/hero/wedding.jpeg') }}"></div>
-                </div>
-                <div class="right-column">
-                    <div class="photo"><img src="{{ asset('images/hero/wedding.jpeg') }}"></div>
-                    <div class="photo"><img src="{{ asset('images/hero/wedding.jpeg') }}"></div>
-                    <div class="photo"><img src="{{ asset('images/hero/wedding.jpeg') }}"></div>
-                </div>
+            <div class="left-column">
+                <div class="photo" data-index="0"><img src="{{ asset('images/hero/wedding.jpeg') }}" data-src="{{ asset('images/hero/wedding.jpeg') }}"></div>
+                <div class="photo" data-index="1"><img src="{{ asset('images/hero/wedding.jpeg') }}" data-src="{{ asset('images/hero/wedding.jpeg') }}"></div>
+                <div class="photo" data-index="2"><img src="{{ asset('images/hero/wedding.jpeg') }}" data-src="{{ asset('images/hero/wedding.jpeg') }}"></div>
             </div>
+            <div class="right-column">
+                <div class="photo" data-index="3"><img src="{{ asset('images/hero/wedding.jpeg') }}" data-src="{{ asset('images/hero/wedding.jpeg') }}"></div>
+                <div class="photo" data-index="4"><img src="{{ asset('images/hero/wedding.jpeg') }}" data-src="{{ asset('images/hero/wedding.jpeg') }}"></div>
+                <div class="photo" data-index="5"><img src="{{ asset('images/hero/wedding.jpeg') }}" data-src="{{ asset('images/hero/wedding.jpeg') }}"></div>
+            </div>
+        </div>
         </div>
     </section>
 
     <!-- ========== LOVE STORY ========== -->
     <section class="section-parallax" id="loveStorySection">
-        <div class="parallax-bg" style="background-image: url('{{ asset('images/hero/background-jawa.jpg') }}')"></div>
+        <div class="parallax-bg" style="background-image: url('{{ asset('images/backgroundlovestory.jpg') }}')"></div>
         <div class="parallax-overlay" style="background: linear-gradient(180deg, rgba(5,12,30,0.7) 0%, rgba(5,12,30,0.55) 100%)"></div>
         <div class="section-content">
+            <div class="section-label">Perjalanan Kami</div>
             <h2 class="section-title">Our Love Story</h2>
             <p class="section-sub">Setiap langkah yang membawa kami ke hari ini</p>
             <div class="gallery-ornament"><span></span><i class="fa-solid fa-heart"></i><span></span></div>
@@ -197,6 +200,23 @@
                     <input type="text" id="guestName" name="guestName" placeholder="Nama Anda" required>
                 </div>
                 <div class="form-group">
+                    <label class="attendance-label">Konfirmasi Kehadiran</label>
+                    <div class="attendance-options">
+                        <label class="attendance-option">
+                            <input type="radio" name="attendance" value="hadir" required>
+                            <span><i class="fa-solid fa-circle-check"></i> Hadir</span>
+                        </label>
+                        <label class="attendance-option">
+                            <input type="radio" name="attendance" value="tidak_hadir">
+                            <span><i class="fa-solid fa-circle-xmark"></i> Tidak Hadir</span>
+                        </label>
+                        <label class="attendance-option">
+                            <input type="radio" name="attendance" value="ragu">
+                            <span><i class="fa-solid fa-circle-question"></i> Masih Ragu</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
                     <textarea id="guestMessage" name="guestMessage" placeholder="Tulis pesan atau doa..." rows="4" required></textarea>
                 </div>
                 <div class="form-actions">
@@ -230,7 +250,7 @@
             </p>
             <p class="thankyou-sub">
                 Semoga setiap kebaikan yang kalian berikan kembali berlipat ganda.<br>
-                Kami sangat bahagia bisa berbagi momen ini bersama orang-orang terkasih.
+                Kami sangat bahagia bisa berbagi momen ini bersama orang-orang terkasih. 🤍
             </p>
             <div class="thankyou-bottom-ornament">
                 <span></span>
@@ -239,6 +259,15 @@
             </div>
         </div>
     </section>
+
+    <!-- ========== LIGHTBOX ========== -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lbClose"><i class="fa-solid fa-xmark"></i></button>
+        <button class="lightbox-nav prev" id="lbPrev"><i class="fa-solid fa-chevron-left"></i></button>
+        <img id="lbImg" src="" alt="Wedding Photo">
+        <button class="lightbox-nav next" id="lbNext"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="lightbox-counter" id="lbCounter"></div>
+    </div>
 
     <!-- ========== NAVBAR ========== -->
     <div class="bottom-navbar">
@@ -250,26 +279,92 @@
     </div>
 
     <script>
+    // Message form + localStorage
+    (function() {
+        var form    = document.getElementById('messageForm');
+        var display = document.getElementById('messagesDisplay');
+        var key     = 'wedding_messages';
+
+        function timeAgo(ts) {
+            var diff = Math.floor((Date.now() - ts) / 1000);
+            if (diff < 60)   return diff + ' detik yang lalu';
+            if (diff < 3600) return Math.floor(diff/60) + ' menit yang lalu';
+            if (diff < 86400) return Math.floor(diff/3600) + ' jam yang lalu';
+            return Math.floor(diff/86400) + ' hari yang lalu';
+        }
+
+        function attendanceBadge(val) {
+            var map = {
+                hadir:       { label: 'Hadir',        icon: 'fa-circle-check',    color: 'rgba(50,200,100,0.25)',  border: 'rgba(50,200,100,0.5)' },
+                tidak_hadir: { label: 'Tidak Hadir',  icon: 'fa-circle-xmark',    color: 'rgba(220,80,80,0.25)',   border: 'rgba(220,80,80,0.5)' },
+                ragu:        { label: 'Masih Ragu',   icon: 'fa-circle-question', color: 'rgba(220,180,50,0.25)',  border: 'rgba(220,180,50,0.5)' }
+            };
+            var m = map[val] || map['ragu'];
+            return '<span class="msg-attendance" style="background:'+m.color+';border-color:'+m.border+'"><i class="fa-solid '+m.icon+'"></i> '+m.label+'</span>';
+        }
+
+        function renderMessages() {
+            var msgs = JSON.parse(localStorage.getItem(key) || '[]');
+            display.innerHTML = '';
+            if (!msgs.length) {
+                display.innerHTML = '<p class="messages-empty">Belum ada pesan. Jadilah yang pertama!</p>';
+                return;
+            }
+            msgs.slice().reverse().forEach(function(m) {
+                var el = document.createElement('div');
+                el.className = 'message-item';
+                el.innerHTML =
+                    '<div class="message-top">' +
+                        '<div class="message-avatar">' + m.name.charAt(0).toUpperCase() + '</div>' +
+                        '<div class="message-meta">' +
+                            '<div class="message-name">' + m.name + ' <i class="fa-solid fa-circle-check msg-verified"></i></div>' +
+                            '<div class="message-time">' + timeAgo(m.ts) + '</div>' +
+                        '</div>' +
+                        attendanceBadge(m.attendance) +
+                    '</div>' +
+                    '<p class="message-content">' + m.message + '</p>';
+                display.appendChild(el);
+            });
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name       = document.getElementById('guestName').value.trim();
+            var message    = document.getElementById('guestMessage').value.trim();
+            var attendance = (form.querySelector('input[name="attendance"]:checked') || {}).value || 'ragu';
+            if (!name || !message) return;
+            var msgs = JSON.parse(localStorage.getItem(key) || '[]');
+            msgs.push({ name: name, message: message, attendance: attendance, ts: Date.now() });
+            localStorage.setItem(key, JSON.stringify(msgs));
+            form.reset();
+            renderMessages();
+        });
+
+        renderMessages();
+        setInterval(renderMessages, 30000);
+    })();
+
     // Countdown
     (function() {
-        var target = new Date('2026-11-11T00:00:00');
+        var target = new Date('2026-11-11T08:00:00+07:00');
+        function pad(n) { return n < 10 ? '0' + n : '' + n; }
         function update() {
             var now = new Date();
             var diff = target - now;
             if (diff <= 0) {
                 ['days','hours','minutes','seconds'].forEach(function(id) {
-                    document.getElementById(id).textContent = '0';
+                    document.getElementById(id).textContent = '00';
                 });
                 return;
             }
             document.getElementById('days').textContent    = Math.floor(diff / 86400000);
-            document.getElementById('hours').textContent   = Math.floor((diff % 86400000) / 3600000);
-            document.getElementById('minutes').textContent = Math.floor((diff % 3600000) / 60000);
-            document.getElementById('seconds').textContent = Math.floor((diff % 60000) / 1000);
-            }
-            update();
-            setInterval(update, 1000);
-        })();
+            document.getElementById('hours').textContent   = pad(Math.floor((diff % 86400000) / 3600000));
+            document.getElementById('minutes').textContent = pad(Math.floor((diff % 3600000) / 60000));
+            document.getElementById('seconds').textContent = pad(Math.floor((diff % 60000) / 1000));
+        }
+        update();
+        setInterval(update, 1000);
+    })();
 
     // Parallax
     (function() {
@@ -290,6 +385,51 @@
             if (!ticking) { requestAnimationFrame(update); ticking = true; }
         }, { passive: true });
         update();
+    })();
+
+    // Lightbox
+    (function() {
+        var photos  = Array.from(document.querySelectorAll('.photo img'));
+        var lb      = document.getElementById('lightbox');
+        var lbImg   = document.getElementById('lbImg');
+        var lbClose = document.getElementById('lbClose');
+        var lbPrev  = document.getElementById('lbPrev');
+        var lbNext  = document.getElementById('lbNext');
+        var lbCount = document.getElementById('lbCounter');
+        var current = 0;
+
+        function open(index) {
+            current = index;
+            var src = photos[current].getAttribute('data-src') || photos[current].src;
+            lbImg.src = src;
+            lbCount.textContent = (current + 1) + ' / ' + photos.length;
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function close() {
+            lb.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function prev() { open((current - 1 + photos.length) % photos.length); }
+        function next() { open((current + 1) % photos.length); }
+
+        photos.forEach(function(img, i) {
+            img.parentElement.addEventListener('click', function() { open(i); });
+        });
+
+        lbClose.addEventListener('click', close);
+        lbPrev.addEventListener('click', function(e) { e.stopPropagation(); prev(); });
+        lbNext.addEventListener('click', function(e) { e.stopPropagation(); next(); });
+        lb.addEventListener('click', function(e) { if (e.target === lb) close(); });
+
+        document.addEventListener('keydown', function(e) {
+            if (!lb.classList.contains('active')) return;
+            if (e.key === 'Escape')     close();
+            if (e.key === 'ArrowLeft')  prev();
+            if (e.key === 'ArrowRight') next();
+        });
     })();
     </script>
 </body>
