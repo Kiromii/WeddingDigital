@@ -13,35 +13,34 @@
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
 }
- .event-location-btn {
+.event-location-btn {
     margin-top: 20px;
-    }
+}
 
-    .event-location-btn {
+.event-location-btn {
     margin-top: 20px;
-    }
+}
 
-    .btn-location {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 12px 22px;
-        border-radius: 999px;
-        text-decoration: none;
-        background: #f4f8ff;
-        color: #1f4d8c;
-        border: 1px solid #d8e4f8;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
+.btn-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    background: #f4f8ff;
+    color: #1f4d8c;
+    border: 1px solid #d8e4f8;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
 
-    .btn-location:hover {
-        background: #1f4d8c;
-        color: #fff;
-        transform: translateY(-2px);
-    }
-    .event-location-btn {
-        margin-top: 20px;
-        text-align: center;
-    }
-
+.btn-location:hover {
+    background: #1f4d8c;
+    color: #fff;
+    transform: translateY(-2px);
+}
+.event-location-btn {
+    margin-top: 20px;
+    text-align: center;
+}
