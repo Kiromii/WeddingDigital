@@ -86,7 +86,7 @@
 
     <!-- ========== GALLERY ========== -->
     <section class="section-parallax" id="gallerySection">
-        <div class="parallax-bg" style="background-image: url('{{ asset('images/backgroundflower2.jpg') }}')"></div>
+        <div class="parallax-bg" style="background-image: url('{{ asset('images/backgroundwedding.jpg') }}')"></div>
         <div class="parallax-overlay"></div>
         <div class="section-content">
             <div class="section-label">Our Moments</div>
