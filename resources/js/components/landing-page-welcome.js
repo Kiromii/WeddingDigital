@@ -408,16 +408,26 @@ function initializeElements() {
         // Wedding date: November 22, 2026
         const weddingDate = new Date(2026, 10, 22, 0, 0, 0).getTime(); // Month is 0-indexed
 
+        const daysEl = document.getElementById("days");
+        const hoursEl = document.getElementById("hours");
+        const minutesEl = document.getElementById("minutes");
+        const secondsEl = document.getElementById("seconds");
+
+        function setValue(el, value) {
+            if (el.textContent !== value) {
+                el.textContent = value;
+            }
+        }
+
         function updateCountdown() {
-            const now = new Date().getTime();
+            const now = Date.now();
             const timeRemaining = weddingDate - now;
 
             if (timeRemaining <= 0) {
-                // Wedding day has arrived
-                document.getElementById("days").textContent = "0";
-                document.getElementById("hours").textContent = "0";
-                document.getElementById("minutes").textContent = "0";
-                document.getElementById("seconds").textContent = "0";
+                setValue(daysEl, "00");
+                setValue(hoursEl, "00");
+                setValue(minutesEl, "00");
+                setValue(secondsEl, "00");
                 return;
             }
 
@@ -430,26 +440,25 @@ function initializeElements() {
             );
             const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-            document.getElementById("days").textContent = String(days).padStart(
-                2,
-                "0",
-            );
-            document.getElementById("hours").textContent = String(
-                hours,
-            ).padStart(2, "0");
-            document.getElementById("minutes").textContent = String(
-                minutes,
-            ).padStart(2, "0");
-            document.getElementById("seconds").textContent = String(
-                seconds,
-            ).padStart(2, "0");
+            setValue(daysEl, String(days).padStart(2, "0"));
+            setValue(hoursEl, String(hours).padStart(2, "0"));
+            setValue(minutesEl, String(minutes).padStart(2, "0"));
+            setValue(secondsEl, String(seconds).padStart(2, "0"));
         }
 
-        // Update countdown immediately
-        updateCountdown();
+        function scheduleUpdate() {
+            const now = Date.now();
+            const delay = 1000 - (now % 1000);
 
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
+            setTimeout(() => {
+                updateCountdown();
+                scheduleUpdate();
+            }, delay);
+        }
+
+        // Update countdown immediately and sync to the next second boundary.
+        updateCountdown();
+        scheduleUpdate();
     }
 
     // ============================================

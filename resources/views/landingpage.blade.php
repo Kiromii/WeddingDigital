@@ -86,7 +86,7 @@
 
     <!-- ========== GALLERY ========== -->
     <section class="section-parallax" id="gallerySection">
-        <div class="parallax-bg" style="background-image: url('{{ asset('images/backgroundwedding.jpg') }}')"></div>
+        <div class="parallax-bg" style="background-image: url('{{ asset('images/backgroundflower2.jpg') }}')"></div>
         <div class="parallax-overlay"></div>
         <div class="section-content">
             <div class="section-label">Our Moments</div>
@@ -110,8 +110,8 @@
 
     <!-- ========== LOVE STORY ========== -->
     <section class="section-parallax" id="loveStorySection">
-        <div class="parallax-bg" style="background-image: url('{{ asset('images/backgroundlovestory.jpg') }}')"></div>
-        <div class="parallax-overlay" style="background: linear-gradient(180deg, rgba(5,12,30,0.7) 0%, rgba(5,12,30,0.55) 100%)"></div>
+        <div class="parallax-bg" style="background-image: url('{{ asset('images/backgroundquote.jpg') }}')"></div>
+        <div class="parallax-overlay"></div>
         <div class="section-content">
 
             <div class="ls-header">
@@ -213,7 +213,7 @@
 
     <!-- ========== PESAN ========== -->
     <section class="section-parallax" id="messageSection">
-        <div class="parallax-bg" style="background-image: url('{{ asset('images/hero/background-jawa.jpg') }}')"></div>
+        <div class="parallax-bg" style="background-image: url('{{ asset('images/hero/backgroundflower2.jpg') }}')"></div>
         <div class="parallax-overlay" style="background: linear-gradient(180deg, rgba(5,12,30,0.65) 0%, rgba(5,12,30,0.5) 100%)"></div>
         <div class="section-content">
             <div class="section-label">Doa & Ucapan</div>
@@ -374,25 +374,11 @@
         setInterval(update, 1000);
     })();
 
-    // Parallax
+    // Parallax disabled: keep section backgrounds fixed while scrolling.
     (function() {
-        var bgs = document.querySelectorAll('.parallax-bg');
-        var ticking = false;
-        function update() {
-            var scrollY = window.scrollY || window.pageYOffset;
-            bgs.forEach(function(bg) {
-                var section = bg.parentElement;
-                var rect = section.getBoundingClientRect();
-                var sectionTop = scrollY + rect.top;
-                var rel = scrollY - sectionTop;
-                bg.style.transform = 'translateY(' + (rel * 0.3) + 'px)';
-            });
-            ticking = false;
-        }
-        window.addEventListener('scroll', function() {
-            if (!ticking) { requestAnimationFrame(update); ticking = true; }
-        }, { passive: true });
-        update();
+        document.querySelectorAll('.parallax-bg').forEach(function(bg) {
+            bg.style.transform = 'translateY(0)';
+        });
     })();
 
     // Lightbox
