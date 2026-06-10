@@ -9,7 +9,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- ========== WELCOME OVERLAY ========== -->
+    <div class="welcome-overlay" id="welcomeOverlay">
+        <div class="welcome-bg" style="background-image: url('{{ asset('images/hero/background-jawa.jpg') }}')"></div>
+        <div class="welcome-overlay-dark"></div>
 
+        <div class="welcome-content">
+            <div class="welcome-top-ornament">
+                <span></span><span></span><span></span>
+            </div>
+
+            <p class="welcome-label">Undangan Pernikahan</p>
+
+            <div class="welcome-names-wrapper">
+                <h1 class="welcome-groom">Riko Alfauzan</h1>
+                <div class="welcome-ampersand">&</div>
+                <h1 class="welcome-bride">Natasya Fitriya Nabila</h1>
+            </div>
+
+            <div class="welcome-divider-ornament">
+                <span></span>
+                <i class="fa-solid fa-heart"></i>
+                <span></span>
+            </div>
+
+            <p class="welcome-date">Rabu, 11 November 2026</p>
+            <p class="welcome-location">Semarang, Jawa Tengah</p>
+
+            <div class="welcome-guest-wrapper">
+                <p class="welcome-guest-label">Kepada Yth.</p>
+                <p class="welcome-guest-name" id="welcomeGuestName">Tamu Undangan</p>
+            </div>
+
+            <button class="btn-open-invitation" id="btnOpenInvitation">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                Buka Undangan
+            </button>
+
+            <p class="welcome-footer-note">Mohon maaf apabila ada kesalahan penulisan nama</p>
+        </div>
+    </div>
     <!-- ========== HERO ========== -->
     <section class="section-parallax" id="landingPage">
         <div class="parallax-bg" style="background-image: url('{{ asset('images/hero/background-jawa.jpg') }}')"></div>
@@ -240,6 +279,68 @@
         </div>
     </section>
 
+    <!-- ========== GIFT ========== -->
+        <section class="section-parallax" id="giftSection">
+            <div class="parallax-bg" style="background-image: url('{{ asset('images/hero/backgroundflower2.jpg') }}')"></div>
+            <div class="parallax-overlay" style="background: linear-gradient(180deg, rgba(5,12,30,0.72) 0%, rgba(5,12,30,0.6) 100%)"></div>
+            <div class="section-content">
+                <div class="section-label">Wedding Gift</div>
+                <h2 class="section-title">Kirim Hadiah</h2>
+                <p class="section-sub">Doa dan kehadiran Anda adalah hadiah terindah bagi kami. Namun jika Anda ingin memberikan hadiah, berikut informasi rekening kami.</p>
+                <div class="gallery-ornament"><span></span><i class="fa-solid fa-gift"></i><span></span></div>
+
+                <div class="gift-cards">
+
+                <!-- BCA -->
+                <div class="gift-card">
+                    <div class="gift-card-header">
+                        <div class="bank-logo">
+                            <img src="{{ asset('images/BCA.png') }}" alt="Logo BCA">
+                        </div>
+                        <div class="bank-info">
+                            <h4>Bank Central Asia</h4>
+                            <span class="bank-type">Tabungan</span>
+                        </div>
+                    </div>
+                    <div class="bank-divider"></div>
+                    <div class="bank-account-name">a.n. Natasya Fitriya Nabila</div>
+                    <div class="bank-number-row">
+                        <span class="bank-number" id="bca-number">1234567890</span>
+                        <button class="btn-copy" onclick="copyNumber('bca-number', this)" aria-label="Salin nomor rekening BCA">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Salin</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mandiri -->
+                <div class="gift-card">
+                    <div class="gift-card-header">
+                        <div class="bank-logo">
+                            <img src="{{ asset('images/Mandiri.jpg') }}" alt="Logo Mandiri">
+                        </div>
+                        <div class="bank-info">
+                            <h4>Bank Mandiri</h4>
+                            <span class="bank-type">Tabungan</span>
+                        </div>
+                    </div>
+                    <div class="bank-divider"></div>
+                    <div class="bank-account-name">a.n. Riko Alfauzan</div>
+                    <div class="bank-number-row">
+                        <span class="bank-number" id="mandiri-number">0987654321012</span>
+                        <button class="btn-copy" onclick="copyNumber('mandiri-number', this)" aria-label="Salin nomor rekening Mandiri">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Salin</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+                <p class="gift-note"><i class="fa-solid fa-circle-info"></i> Konfirmasi transfer dapat dilakukan melalui WhatsApp</p>
+            </div>
+        </section>
+
     <!-- ========== THANK YOU ========== -->
     <section class="section-parallax thankyou-section">
         <div class="parallax-bg" style="background-image: url('{{ asset('images/backgroundflower2.jpg') }}')"></div>
@@ -284,9 +385,35 @@
         <a href="#loveStorySection" class="navbar-item" aria-label="Love Story"><i class="fa-solid fa-scroll"></i></a>
         <a href="#dateSection" class="navbar-item" aria-label="Tanggal"><i class="fa-solid fa-calendar-days"></i></a>
         <a href="#messageSection" class="navbar-item" aria-label="Pesan"><i class="fa-solid fa-comment"></i></a>
+        <a href="#giftSection" class="navbar-item" aria-label="Gift"><i class="fa-solid fa-gift"></i></a>
     </div>
 
     <script>
+        // Welcome overlay
+        (function() {
+            var overlay = document.getElementById('welcomeOverlay');
+            var btn     = document.getElementById('btnOpenInvitation');
+
+            // Ambil nama tamu dari URL query string ?to=Nama+Tamu
+            var params    = new URLSearchParams(window.location.search);
+            var guestName = params.get('to');
+            if (guestName) {
+                var el = document.getElementById('welcomeGuestName');
+                if (el) el.textContent = decodeURIComponent(guestName);
+            }
+
+            btn.addEventListener('click', function() {
+                overlay.classList.add('hide');
+                document.body.style.overflow = '';
+                setTimeout(function() {
+                    overlay.style.display = 'none';
+                }, 800);
+            });
+
+            // Kunci scroll selama welcome terbuka
+            document.body.style.overflow = 'hidden';
+        })();
+
     // Message form + localStorage
     (function() {
         var form    = document.getElementById('messageForm');
@@ -425,6 +552,27 @@
             if (e.key === 'ArrowRight') next();
         });
     })();
+
+    // Copy rekening
+function copyNumber(id, btn) {
+    var text = document.getElementById(id).textContent.replace(/\s/g, '');
+    navigator.clipboard.writeText(text).then(function() {
+        var originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check"></i><span>Tersalin!</span>';
+        btn.classList.add('copied');
+        setTimeout(function() {
+            btn.innerHTML = originalHTML;
+            btn.classList.remove('copied');
+        }, 2000);
+    }).catch(function() {
+        var range = document.createRange();
+        range.selectNode(document.getElementById(id));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+    });
+}
     </script>
 </body>
 </html>
