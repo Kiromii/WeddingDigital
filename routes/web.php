@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // Landing Page / Cover Page
 Route::get('/', function () {
-    return view('welcome-wedding');
+    return view('landingpage');
 });
 
 Route::get('/undangan', function () {
