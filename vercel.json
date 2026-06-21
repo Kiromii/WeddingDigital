@@ -20,8 +20,8 @@
         "APP_NAME": "WedingDigital",
         "APP_ENV": "local",
         "APP_KEY": "base64:2uaoOybep4OObgORRdFJQ7JmdgbdalHQ9QqKYf2wK1c=",
-        "APP_DEBUG": "true",
-        "APP_URL": "http://localhost",
+        "APP_DEBUG": "false",
+        "APP_URL": "https://wedding-digital-eight.vercel.app/",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
