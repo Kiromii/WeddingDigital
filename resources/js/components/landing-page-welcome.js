@@ -378,7 +378,9 @@ function initializeElements() {
 
     function initializeParallax() {
         const heroBgParallax = document.querySelector(".hero-bg-parallax");
-        const galleryBgParallax = document.querySelector(".gallery-bg-parallax");
+        const galleryBgParallax = document.querySelector(
+            ".gallery-bg-parallax",
+        );
         const gallerySection = document.querySelector(".gallery-section");
 
         if (!heroBgParallax && !galleryBgParallax) return;
@@ -412,6 +414,11 @@ function initializeElements() {
         const hoursEl = document.getElementById("hours");
         const minutesEl = document.getElementById("minutes");
         const secondsEl = document.getElementById("seconds");
+
+        if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
+            x;
+            return;
+        }
 
         function setValue(el, value) {
             if (el.textContent !== value) {

@@ -29,6 +29,7 @@
             <!-- Photo Door - Right -->
             <div class="photo-door photo-right" id="photoRight" style="background-image: url('{{ asset('images/photo-right.jpg') }}');"></div>
         </div>
+    </div>
 
     <!-- Hidden Audio Element -->
     <audio id="backgroundMusic" preload="none">
