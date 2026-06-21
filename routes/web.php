@@ -8,7 +8,7 @@ Route::get('/', function () {
 });
 
 Route::get('/undangan', function () {
-    return view('welcome-wedding');
+    return view('landingpage');
 });
 
 Route::get('/landingpage', function () {
