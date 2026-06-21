@@ -4,9 +4,14 @@
     "functions": {
         "api/*.php": {
             "runtime": "vercel-php@0.9.0"
-        }
+        },
+        "/public/**": { "runtime": "@vercel/static" }
     },
     "routes": [
+        {
+            "src": "/(css|js)/(.*)",
+            "dest": "public/$1/$2"
+        },
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
@@ -29,5 +34,6 @@
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie"
-    }
+    },
+    "outputDirectory": "api"
 }
