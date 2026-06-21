@@ -20,7 +20,7 @@
         "APP_NAME": "WeddingDigital",
         "APP_ENV": "production",
         "APP_KEY": "base64:2uaoOybep4OObgORRdFJQ7JmdgbdalHQ9QqKYf2wK1c=",
-        "APP_DEBUG": "false",
+        "APP_DEBUG": "true",
         "APP_URL": "https://wedding-digital-eight.vercel.app",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
