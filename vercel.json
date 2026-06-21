@@ -1,23 +1,23 @@
 {
     "version": 2,
     "framework": null,
-    "functions": {
-        "api/*.php": {
-            "runtime": "vercel-php@0.9.0"
-        }
-    },
-    "routes": [
-        {
-            "src": "/(css|js)/(.*)",
-            "dest": "/public/$1/$2"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/api/index.php"
-        }
+    "builds": [
+        { "src": "/api/index.php", "use": "vercel-php@0.6.2" },
+        { "src": "/public/build/assets/**", "use": "@vercel/static" },
+        { "src": "/public/**", "use": "@vercel/static" }
     ],
+    "routes": [
+        { "src": "/build/assets/(.*)", "dest": "/public/build/assets/$1" },
+        {
+            "src": "/favicon.ico",
+            "headers": { "Content-Type": "image/x-icon" },
+            "dest": "/public/favicon.ico"
+        },
+        { "src": "/(.*)", "dest": "/api/index.php" }
+    ],
+    "outputDirectory": "public",
     "env": {
-        "APP_NAME": "WedingDigital",
+        "APP_NAME": "WeddingDigital",
         "APP_ENV": "production",
         "APP_KEY": "base64:2uaoOybep4OObgORRdFJQ7JmdgbdalHQ9QqKYf2wK1c=",
         "APP_DEBUG": "false",
